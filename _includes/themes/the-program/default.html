@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="author" content="{{ site.author.name }}">
     <meta name="description" content="{% if page.description == null %}{{ site.description }}{% else %}{{ page.description }}{% endif %}" />
-    <meta name="keywords" content="yizeng,{% if page.tags != null %}{{ page.tags | join: ',' }}{% else %}software,engineer,testing,christchurch,newzealand{% endif %}" />
+    <meta name="keywords" content="曾屹,{% if page.tags != null %}{{ page.tags | join: ',' }}{% else %}软件,工程师,测试,基督城,新西兰{% endif %}" />
     {% if page.url == "/404.html" %}<meta http-equiv="refresh" content="5; url=/">{% endif %}
     <title>{% if page.url != "/index.html" %} {{ page.title }} - {% endif %}{{ site.title }}</title>
 
@@ -32,7 +32,7 @@
 
 <body>
     <!--[if lt IE 9]>
-        <p class="chromeframe">You are using an outdated browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <p class="chromeframe">您正在使用过时的浏览器. 请<a href="http://browsehappy.com/">升级</a>或<a href="http://www.google.com/chromeframe/?redirect=true">开启 Google Chrome Frame</a> 来提升使用体验。</p>
     <![endif]-->
     <div id="page" class="hentry">
         <header class="the-header">
@@ -41,10 +41,10 @@
                     <nav class="nav-global">
                         <ul>
                             <li class="logo"><a href="/">{{ site.title }}</a></li>
-                            <li class="article"><a href="/articles">articles</a></li>
-                            <li class="note"><a href="/notes">notes</a></li>
-                            <li class="category"><a href="/categories">categories</a></li>
-                            <li class="tag"><a href="/tags">tags</a></li>
+                            <li class="article"><a href="/articles">文章列表</a></li>
+                            <li class="note"><a href="/notes">笔记列表</a></li>
+                            <li class="category"><a href="/categories">博文分类</a></li>
+                            <li class="tag"><a href="/tags">博文标签</a></li>
                         </ul>
                     </nav>
                 </div><!-- unit-inner -->
@@ -65,22 +65,10 @@
             <div class="unit-foot">
                 <div class="unit-inner unit-foot-inner">
                     <div class="misc vcard">
-                        <h4><a href="/about">about</a></h4>
-                        <p>Software developer/Test automator based in Christchurch, New Zealand.</p><br />
+                        <h4><a href="/about">关于</a></h4>
+                        <p>本站译自 <a href="http://yizeng.me">yizeng.me</a></p><br />
                         <a href="/rss.xml" rel="me">
-                            <img src='/assets/images/flat-no-flat-social-icons/RSS-32.png' alt="Yi Zeng's rss feeds" height="36" width="36">
-                        </a>
-                        <a href="http://github.com/{{ site.author.github }}/" rel="me">
-                            <img src='/assets/images/flat-no-flat-social-icons/Github-32.png' alt="Yi Zeng's Github page" height="36" width="36">
-                        </a>
-                        <a href="http://last.fm/user/{{ site.author.lastfm }}/" rel="me">
-                            <img src='/assets/images/flat-no-flat-social-icons/LastFM-32.png' alt="Yi Zeng's Last.fm page" height="36" width="36">
-                        </a>
-                        <a href="http://linkedin.com/in/{{ site.author.linkedin }}/" rel="me">
-                            <img src='/assets/images/flat-no-flat-social-icons/LinkedIn-32.png' alt="Yi Zeng's LinkedIn page" height="36" width="36">
-                        </a>
-                        <a href="http://stackoverflow.com/users/1177636/user1177636" rel="me">
-                            <img src='/assets/images/flat-no-flat-social-icons/StackOverFlow-32.png' alt="Yi Zeng's StackOverflow page" height="36" width="36">
+                            <img src='/assets/images/flat-no-flat-social-icons/RSS-32.png' alt="曾屹的 rss feeds" height="36" width="36">
                         </a>
                     </div><!-- misc -->
                     <!--p class="licence"></p-->

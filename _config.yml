@@ -8,11 +8,11 @@ markdown: rdiscount
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Yi Zeng
-description: "Personal website for Yi Zeng, a software engineer and test automator based in Christchurch, New Zealand."
+title : 曾屹
+description: "曾屹的个人网站"
 # tagline: Site Tagline
 author :
-  name : Yi Zeng
+  name : 曾屹
   github : yizeng
   lastfm: yizeng
   linkedin: yizengnz
@@ -27,7 +27,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://yizeng.me
+production_url : http://cn.yizeng.me
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -84,7 +84,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : yizeng
+      short_name : yizeng-cn
     livefyre :
       site_id : 123
     intensedebate :
@@ -102,7 +102,7 @@ JB :
   analytics :
     provider : google
     google : 
-        tracking_id : 'UA-42466615-1'
+        tracking_id : 'UA-42466615-2'
     getclicky :
       site_id : 
     mixpanel :

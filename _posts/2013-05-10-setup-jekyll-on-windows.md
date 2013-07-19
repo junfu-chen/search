@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Setup Jekyll on Windows"
-description: "How to install and setup Jekyll on a Windows machine."
+title: "在 Windows 上安装 Jekyll"
+description: "如何在 Windows 上安装 Jekyll"
 category: notes
 tags: [jekyll, ruby]
 alias: [/2013/05/10/]

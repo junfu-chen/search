@@ -1,8 +1,7 @@
 ---
 layout: post
-title: "Create a custom Jekyll 404 page"
-description: "How to create a custom Jekyll 404 page for sites hosted on GitHub Pages,
-which can redirect to homepage automatically after a timeout using HTML meta tag."
+title: "创建自定义的 Jekyll 404 页面"
+description: "如何给保存在 GitHub Pages 上的网站创建自定义的404页面，并使用 HTML meta 标签使之能在一段时间后自动跳转回主页。"
 category: articles
 tags: [jekyll, github]
 alias: [/2013/05/26/]

@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "Use _netrc to avoid TortoiseGit asking for username and password"
-description: "How to use _netrc in order to avoid TortoiseGit asking for username and password."
+title: "如何使用 _netrc 来避免 TortoiseGit 要求输入用户名和密码"
+description: "如何使用 _netrc 来避免 TortoiseGit 要求输入用户名和密码。"
 category: notes
 tags: [git, tortoisegit]
 alias: [/2013/05/19/]
 ---
 {% include JB/setup %}
 
-1. Open `%USERPROFILE%` from Windows Explorer
-2. Create a new file with name `_netrc`
-3. Put the following lines in
+1. 从文件管理器打开 `%USERPROFILE%`
+2. 新建一个文件，名为 `_netrc`
+3. 在文件中输入以下几行：
 
 > machine github.com<br />
 > login yizeng<br />

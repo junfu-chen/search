@@ -1,15 +1,15 @@
-# yizeng.me [![Build Status](https://travis-ci.org/yizeng/yizeng.github.com.png?branch=master)](https://travis-ci.org/yizeng/yizeng.github.com)
+# cn.yizeng.me
 
-This repository hosts the source of [yizeng.me](http://yizeng.me), with all functional UI tests.
+[cn.yizeng.me](http://cn.yizeng.me) 是 [yizeng.me](http://yizeng.me)的中文译本。
 
-## About me
+## 关于本站
 
-That's what [about page](http://yizeng.me/about) is for.
+请参阅[关于本站](http://cn.yizeng.me/about)页面。
 
-## License
-All posts are licensed under [Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)](http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB).
+## 许可证
+所有文章皆以[署名-相同方式共享 3.0 未本地化版本 (CC BY-SA 3.0)](http://creativecommons.org/licenses/by-sa/3.0/deed.zh)发表。
 
-License for all code written by me is [MIT](http://opensource.org/licenses/MIT).
+所有原创代码均使用 [MIT 许可证](http://opensource.org/licenses/MIT)。
 
 (The MIT License)
 
@@ -33,5 +33,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Acknowledgments
-See [yizeng.me/about](http://yizeng.me/about/) page
+## 鸣谢
+请参阅 [cn.yizeng.me/about](http://cn.yizeng.me/about/) 页面。

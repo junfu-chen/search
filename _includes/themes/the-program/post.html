@@ -12,7 +12,7 @@
                 <div class="entry-content">
                         <div class="meta">
                             <p class="date-publish">
-                                Published: <time itemprop="datePublished" class="date-pub" title="{{ page.date | date_to_xmlschema }}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B' }} {{ page.date | date: '%d' }}, {{ page.date | date: '%Y' }} </time> by 
+                                发表于: <time itemprop="datePublished" class="date-pub" title="{{ page.date | date_to_xmlschema }}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B' }} {{ page.date | date: '%d' }}, {{ page.date | date: '%Y' }} </time> by 
                                 <a rel="author" href="/">
                                     <span itemprop="author" itemscope itemtype="http://schema.org/Person">
                                         <span itemprop="name">
@@ -24,17 +24,17 @@
                                         </span>
                                     </span>
                                 </a>
-                                <a class="license" rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">
+                                <a class="license" rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.zh">
                                     <img alt="Creative Commons Licence" style="border-width:0" src="/assets/images/cc-by-sa.png"  height="16" width="80"/>
                                 </a>
                             </p>
                             <ul class="list-category list-linear">
-                                <li class="list-head">category: </li>
+                                <li class="list-head">分类: </li>
                                 {% assign categories_list = page.categories %}
                                 {% include JB/categories_list %}
                             </ul>
                             <ul class="list-tag list-linear">
-                                <li class="list-head">tags: </li>
+                                <li class="list-head">标签: </li>
                                 {% assign tags_list = page.tags %}
                                 {% include JB/tags_list %}
                             </ul>
@@ -59,7 +59,7 @@
                             {% endif %}
                         </ul>
                     </nav>
-                    <p class="gotop"><a href="#page">Back to Top</a></p>
+                    <p class="gotop"><a href="#page">返回顶部</a></p>
                 </div>
             </footer>
             <div class="misc-content">

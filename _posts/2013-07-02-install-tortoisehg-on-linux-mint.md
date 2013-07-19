@@ -1,39 +1,36 @@
 ---
 layout: post
-title: "Install TortoiseHg on Linux Mint"
-description: "How to install TortoiseHg on Linux Mint 15 via official PPA"
+title: "在 Linux Mint 上安装 TortoiseHg"
+description: "如何通过官方 PPA 在 Linux Mint 15 上安装 TortoiseHg。"
 category: notes
 tags: [linux mint, tortoisehg]
 alias: [/2013/07/02/]
 ---
 {% include JB/setup %}
 
-This is a note for how to install [TortoiseHg](http://tortoisehg.bitbucket.org/)
-on Linux Mint 15 via [TortoiseHg Release PPA](https://launchpad.net/~tortoisehg-ppa/+archive/releases).
+本文记录了如何通过官方 [TortoiseHg Release PPA](https://launchpad.net/~tortoisehg-ppa/+archive/releases)
+在 Linux Mint 15 上安装 [TortoiseHg](http://tortoisehg.bitbucket.org/)。
 
-<br />**Note**:
+<br />**注意**:
 
-- It is suggested that do NOT also include a
-[Mercurial PPA](https://launchpad.net/~mercurial-ppa/+archive/releases) in the system,
-as TortoiseHg has strict version requirements for which versions of Mercurial
-it can interoperate with.
+- 不推荐同时向系统添加[Mercurial PPA](https://launchpad.net/~mercurial-ppa/+archive/releases)，
+因为 TortoiseHg 对于同何版本的 Mercurial 共同工作有着严格的要求。
 
 - [TortoiseHg PPA Stable Snapshots](https://launchpad.net/~tortoisehg-ppa/+archive/stable-snapshots)
-provides packages of the latest TortoiseHg release.
+提供了最新发布版本的安装包。
 
-<br />**Steps**:
+<br />**步骤**:
 
-1. Add [TortoiseHg Release PPA](https://launchpad.net/~tortoisehg-ppa/+archive/releases)
-to the system
+1. 向系统添加 [TortoiseHg Release PPA](https://launchpad.net/~tortoisehg-ppa/+archive/releases)
 > sudo add-apt-repository ppa:tortoisehg-ppa/releases
-2. Get information on the newest versions of packages and their dependencies
+2. 更新软件包及依赖关系
 > sudo apt-get update
-3. Install `tortoisehg` package
+3. 安装 `tortoisehg` 软件包
 > sudo apt-get install tortoisehg
-4. Check if installation succeeded
+4. 测试安装是否成功
 > hg --version
 
-Terminal output for example:
+终端输出示例:
 
 	Mercurial Distributed SCM (version 2.6.1)
 	(see http://mercurial.selenic.com for more information)

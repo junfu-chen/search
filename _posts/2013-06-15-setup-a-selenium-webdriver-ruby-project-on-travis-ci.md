@@ -1,8 +1,7 @@
 ---
 layout: post
-title: "Setup a Selenium WebDriver Ruby project on Travis CI"
-description: "How to setup an automated UI testing project on Travis CI
-using Selenium WebDriver Ruby binding with headless PhantomJS."
+title: "在 Travis CI 上创建 Selenium WebDriver Ruby 项目"
+description: "如何在 Travis CI 上创建一个使用 headless PhantomJS 浏览器的 Selenium WebDriver Ruby 自动化测试项目。"
 category: articles
 tags: [github, phantomjs, ruby, selenium, travis-ci, webdriver]
 alias: [/2013/06/15/]
