@@ -1,6 +1,6 @@
 # cn.yizeng.me
 
-[cn.yizeng.me](http://cn.yizeng.me) 是 [yizeng.me](http://yizeng.me)的中文译本。
+[cn.yizeng.me](http://cn.yizeng.me) 是 [yizeng.me](http://yizeng.me) 的中文译本。
 
 ## 关于本站
 

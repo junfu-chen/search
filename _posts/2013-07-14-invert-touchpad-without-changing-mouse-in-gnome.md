@@ -9,47 +9,41 @@ load_js_utils: true
 ---
 {% include JB/setup %}
 
-Being a left-handed touchpad, right-handed mouse user,
-it bugged me that after installing Linux Mint 15 Cinnamon,
-the touchpad and mouse can't be set separately through "System Settings -> Mouse and Touchpad".
+作为一个使用反转了左右键位的触摸板，却使用正常键位鼠标的左撇子用户，在安装了 Linux Mint 15 Cinnamon 桌面之后，不能从 "System Settings -> Mouse and Touchpad" 分别设置触摸板和鼠标的左右键位是一件很恼人的事情。
 
-However after a bit researching, a simple solution is found using GNOME's [Gsettings](https://developer.gnome.org/gio/2.34/GSettings.html), inspired by this [AskUbuntu question](http://askubuntu.com/questions/83590/how-do-i-disable-the-touchpad-using-the-upper-left-corner-on-an-hp-pavilion-dv6).
+不过在经过了短暂的研究后，受此 [AskUbuntu 问答](http://askubuntu.com/questions/83590/how-do-i-disable-the-touchpad-using-the-upper-left-corner-on-an-hp-pavilion-dv6)启发，找到了一个简单的通过 GNOME [Gsettings](https://developer.gnome.org/gio/2.34/GSettings.html) 来设置的解决方法。
 
-### <a id="invert-touchpad"></a>Invert touchpad
+### <a id="invert-touchpad"></a>反转触摸板
 
-#### <a id="using-cli"></a>From Command Line
+#### <a id="using-cli"></a>通过命令行
 
-In Gsettings, there is a key called `left-handed` under `touchpad`,
-controlling the behaviour of touchpad clicking,
-which is a string value defaults to "mouse" but can be set to "left" or "right".
+在 Gsettings 里, `touchpad` 下面有一个子键叫做 `left-handed`，是用来控制触摸板的左右键位属性的，该子键是一个 string 类型，默认键值为 "mouse"，但可以设置成 "left" 或 "right"。
 
-From the terminal, type in the following command to make it left-handed:
+通过终端，输入以下命令来将其设成左利手键位：
 
 > gsettings set org.gnome.settings-daemon.peripherals.touchpad left-handed left
 
-#### <a id="using-gui"></a>From GUI "dconf-editor"
+#### <a id="using-gui"></a>通过图形化界面 "dconf-editor"
 
-Gsettings has a front-end GUI tool called "dconf-editor",
-which uses binary blob database to maintain all setting entries with their values.
-(It's kind of similar to the relationship between "Windows Regitry" and "regedit".)
+Gsettings 有一个图形化工具叫做 "dconf-editor"，
+它使用二进制大对象数据库来保存全部设置和键值。(两者之间的关系和 “Windows Regitry” 与 “regedit” 类似。)
 
-1. To install `dconf-editor`, from the terminal type in:
+1. 首先安装 `dconf-editor`, 在终端中输入：
+
 > sudo apt-get install dconf-tools
 
-2. To open it, press `Alt` + `F2`, then type in `dconf-editor` and hit `Enter`.
+2. 然后通过 `Alt` + `F2`， 输入 `dconf-editor` 并敲击 `Enter` 来打开它。
 
-3. Press `Ctrl` + `F` to search for an entry named `touchpad` in the opened "dconf-editor" window.
+3. 在打开的 “dconf-editor” 窗口中输入 `Ctrl` + `F` 来搜索 `touchpad` 字段。
 
-4. Select the `left-handed` under `touchpad` and set its value to `left`.
+4. 在 `touchpad` 下点选子键 `left-handed` 并将其键值设置为 `left`。
 
-<a class="post-image" href="/assets/images/posts/2013-07-14-dconf-editor-periperals-touchpad.png" title="Invert touchpad from dconf-editor">
-	<img itemprop="image" src="/assets/images/posts/2013-07-14-dconf-editor-periperals-touchpad.png" alt="Invert touchpad from dconf-editor" />
+<a class="post-image" href="/assets/images/posts/2013-07-14-dconf-editor-periperals-touchpad.png" title="从 dconf-editor 反转触摸板">
+	<img itemprop="image" src="/assets/images/posts/2013-07-14-dconf-editor-periperals-touchpad.png" alt="I从 dconf-editor 反转触摸板" />
 </a>
 
-### <a id="invert-mouse"></a>Invert mouse
+### <a id="invert-mouse"></a>反转鼠标
 
-If the mouse needs to be inverted as well, it can be done from command line, "System Settings" or "dconf-editor".
-However, note that the `left-handed` entry under `peripherals.mouse` is a Boolean,
-so it should be set to either "true" or "false".
+如果也想将鼠标的左右键位反转，可以通过命令行、“系统设置”或是 "dconf-editor" 来进行。不过请注意 `peripherals.mouse` 下的子键 `left-handed` 所保存的键值是布尔类型，即只应被设置为 "true" 或 "false"。 
 
 > gsettings set org.gnome.settings-daemon.peripherals.mouse left-handed true
