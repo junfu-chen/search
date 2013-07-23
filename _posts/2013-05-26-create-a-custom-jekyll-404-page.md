@@ -32,9 +32,9 @@ alias: [/2013/05/26/]
 	<p>对不起，无法找到该页。 =(</p>
 
 ###自动跳转 404 页面###
-为了让 404 页面能自动跳转，我迄今为止所找到的最简单的方法是通过 HTML meta 标签，`meta http-equiv="refresh"`。
+为了让 404 页面能自动跳转，迄今为止所找到的最简单的方法是通过 HTML meta 标签，`meta http-equiv="refresh"`。
 
-1. 在 Jekyll 的 default.html 里 (例如： 我的在 /_includes/themes/THEME_NAME/default.html), 在 `<head>` 内添加一个 `<meta>` 标签。 ([W3schools 示例](http://www.w3schools.com/tags/att_meta_http_equiv.asp))
+1. 在 Jekyll 的 default.html 文件里 (例如： 本网站的在 /_includes/themes/THEME_NAME/default.html), 在 `<head>` 标签内添加一个 `<meta>` 标签。 ([W3schools 示例](http://www.w3schools.com/tags/att_meta_http_equiv.asp))
 
 2. 给 meta 标签添加一个 `http-equiv` 属性并设置为 "refresh", i.e `<meta http-equiv="refresh">`.
 

@@ -29,7 +29,6 @@ Gsettings 有一个图形化工具叫做 "dconf-editor"，
 它使用二进制大对象数据库来保存全部设置和键值。(两者之间的关系和 “Windows Regitry” 与 “regedit” 类似。)
 
 1. 首先安装 `dconf-editor`, 在终端中输入：
-
 > sudo apt-get install dconf-tools
 
 2. 然后通过 `Alt` + `F2`， 输入 `dconf-editor` 并敲击 `Enter` 来打开它。

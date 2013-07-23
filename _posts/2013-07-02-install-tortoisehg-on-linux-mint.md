@@ -13,11 +13,11 @@ alias: [/2013/07/02/]
 
 <br />**注意**:
 
-- 不推荐同时向系统添加[Mercurial PPA](https://launchpad.net/~mercurial-ppa/+archive/releases)，
+- 不推荐同时也向系统添加[Mercurial PPA](https://launchpad.net/~mercurial-ppa/+archive/releases)，
 因为 TortoiseHg 对于同何版本的 Mercurial 共同工作有着严格的要求。
 
 - [TortoiseHg PPA Stable Snapshots](https://launchpad.net/~tortoisehg-ppa/+archive/stable-snapshots)
-提供了最新发布版本的安装包。
+提供了最新稳定版本的安装包。
 
 <br />**步骤**:
 

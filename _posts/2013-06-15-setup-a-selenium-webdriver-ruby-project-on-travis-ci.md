@@ -9,32 +9,31 @@ load_js_utils: true
 ---
 {% include JB/setup %}
 
-### <a id="create-repo"></a>Create a repository on Github
+### <a id="create-repo"></a>在 Github 上创建一个代码仓库
 
-A Github repository is needed in order to build it on Travis CI.
-If haven't done so, go to Github's ['Create a New Repository'](https://github.com/repositories/new) page and create a new public repository.
+要想在 Travis CI 上运行项目，必须首先要在 Github 上创建一个代码仓库。
+如果还没有建立代码仓库，请前往 Github 的 ['Create a New Repository'](https://github.com/repositories/new) 页面创建一个新的公开代码仓库。
 
-### <a id="create-project"></a>Create a Selenium WebDriver Ruby project
+### <a id="create-project"></a>建立 Selenium WebDriver Ruby 项目
 
-#### <a id="project-structure"></a>Project Structure
-Here is how this sample Selenium Ruby project is structured:
+#### <a id="project-structure"></a>项目结构
+以下是本示例 Selenium Ruby 项目的结构：
 
-	/root						-- root of the repository
-		/test					-- folder contains the sample test
-			test_home_page.rb	-- sample test file
-		.travis.yml				-- configuration file for Travis CI
+	/root						-- 代码的根目录
+		/test					-- 示例测试的文件夹
+			test_home_page.rb	-- 示例测试文件
+		.travis.yml				-- Travis CI 的配置文件
 		README.md
 		Rakefile				-- Rakefile
 
-#### <a id="create-sample-test"></a>Create a sample UI test with headless PhantomJS
-- `Test::Unit` framework is used as the testing framework in this example.
-- Headless WebKit [PhantomJS](http://phantomjs.org/) will be the browser to run the UI tests.
-- PhantomJS binary should be installed by default in [Travis CI servers](http://about.travis-ci.org/docs/user/ci-environment/),
-which is `1.9.1` as of 05/07/2013.
-- Travis CI supports tests which require GUI, see documentation
-[here](http://about.travis-ci.org/docs/user/gui-and-headless-browsers).
+#### <a id="create-sample-test"></a>编写一个使用 headless PhantomJS 的 UI 测试
+- `Test::Unit` 是本示例所使用的测试框架。
+- Headless WebKit [PhantomJS](http://phantomjs.org/) 是本示例将要测试的浏览器。
+- PhantomJS 的可执行文件应该已经被预案装于 [Travis CI 服务器](http://about.travis-ci.org/docs/user/ci-environment/)上，
+目前于 05/07/2013 时的版本为 `1.9.1`
+- Travis CI 同时也支持需要运行 GUI 的测试, 请查阅[文档](http://about.travis-ci.org/docs/user/gui-and-headless-browsers)。
 
-Here is a sample test file called `test_home_page.rb`:
+以下为一个示例测试文件叫做 `test_home_page.rb`：
 {% highlight ruby %}
 require 'selenium-webdriver'
 require 'test/unit'
@@ -58,15 +57,15 @@ module Test
 end
 {% endhighlight %}
 
-#### <a id="add-rakefile"></a>Add Rakefile
-Travis CI uses `Rakefile` to build project and execute the tests, if the file is not present, build will fail like this:
+#### <a id="add-rakefile"></a>添加 Rakefile
+Travis CI 使用 `Rakefile` 来编译项目并运行测试，如果该文件不存在，编译会像如下一样报错：
 
 	$ rake
 	rake aborted!
 	No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
 	The command "rake" exited with 1.
 
-Here is a sample Rakefile:
+以下为 Rakefile 示例：
 {% highlight ruby %}
 require 'rake/testtask'
 
@@ -74,84 +73,82 @@ task :default => [:test]
 Rake::TestTask.new(:test) do |test|
   test.libs << 'test'
 
-  # ensure the sample test file is included here
+  # 确保路径包含示例测试文件
   test.test_files = FileList['test/test_*.rb']
 
   test.verbose = true
 end
 {% endhighlight %}
 
-#### <a id="add-travis-yml"></a>Add .travis.yml
+#### <a id="add-travis-yml"></a>添加 .travis.yml
 
-Travis CI uses `.travis.yml` file in the root of the repository to learn about the project, which for instance includes:
+Travis CI 使用在项目根目录下的 `.travis.yml` 来了解项目配置，例如：
 
-- Programming language of the project
-- Build setup and cleanup
-- Commands to execute the build
+- 项目所使用的编程语言
+- 运行项目的 setup 和 cleanup
+- 运行项目所需要的命令
 
-The sample testing project here is written in Ruby, so Ruby configurations will be used in `.travis.yml`.
-Detailed official documentation can be found [here](http://about.travis-ci.org/docs/user/languages/ruby/).
-In order to validate it, [Travis Lint](http://about.travis-ci.org/docs/user/travis-lint/) would be a handy tool, while
-the simplest way is just go to [Travis WebLint](http://lint.travis-ci.org/) and paste the content in.
+因为示例项目是写于 Ruby 的，故 Ruby 的配置将被使用于 `.travis.yml` 中。
+详细的官方文档可以[在这里](http://about.travis-ci.org/docs/user/languages/ruby/)被查阅。
+想要验证配置文件，[Travis Lint](http://about.travis-ci.org/docs/user/travis-lint/) 会是一个非常方便的工具，不过最简单的方法是前往 [Travis WebLint](http://lint.travis-ci.org/) 页面，直接粘贴进配置文件内容。
 
 {% highlight yaml %}
-# Sample .travis.yml file:
+# 示例 .travis.yml 文件:
 language: ruby
 
-rvm: # the Ruby versions to be used
+rvm: # 将被使用的 Ruby 版本
   - 2.0.0
   - 1.9.3
   - 1.9.2
 
 before_install:
-  - gem update # optional, update all gems
+  - gem update # 可选，更新所有的 gems
   - gem install selenium-webdriver
-  - phantomjs --version # output the phantomjs version
+  - phantomjs --version # 输出 phantomjs 版本
 {% endhighlight %}
 
-### <a id="push-to-github"></a>Push to Github
-Once the repository is properly created, push it to Github.
+### <a id="push-to-github"></a>上传至 Github
+一旦代码仓库已正确设立了，就可以上传至 Github。
 
-### <a id="enable-hook"></a>Login to Travis CI and enable hook
+### <a id="enable-hook"></a>登入 Travis CI 并开启 hook
 
-1. Login to Travis CI with the Github account of this repository.
-2. Visit [Travis CI profile](https://travis-ci.org/profile) and find the repository.
-If the repository does not appear on the list, make sure
-	- It is not a private repository
-	- Travis CI has been synced with Github (click "Sync now" if necessary)
-3. Enable the hook for this repository.
+1. 使用本项目的 Github 帐号登入 Travis CI
+2. 前往 [Travis CI profile](https://travis-ci.org/profile) 页面并找到此项目的代码仓库，
+如果此项目不在列表中，请确认：
+	- 此代码仓库不是私有的
+	- Travis CI 已经与 Github 同步 （如果需要可以点击 “立即同步” 按钮）
+3. 开启此代码仓库的 hook
 
-<a class="post-image" href="/assets/images/posts/2013-06-09-enable-hook-on-travis-ci.png" title="Enable hook on Travis CI">
-  <img itemprop="image" src="/assets/images/posts/2013-06-09-enable-hook-on-travis-ci.png" alt="Enable hook on Travis CI" />
+<a class="post-image" href="/assets/images/posts/2013-06-09-enable-hook-on-travis-ci.png" title="在 Travis CI 上开启 hook">
+  <img itemprop="image" src="/assets/images/posts/2013-06-09-enable-hook-on-travis-ci.png" alt="在 Travis CI 上开启 hook" />
 </a>
 
-### <a id="run-project"></a>Run project on Travis CI
+### <a id="run-project"></a>在 Travis CI 上运行项目
 
-Travis CI should be able to build to the project automatically whenever new changesets are pushed to Github.
+只要有更新上传至代码仓库，Travis CI 应该会自动运行项目。
 
-However, to kick off a test run manually:
+不仅如此，若想要手动运行项目，可以通过以下几步：
 
-1. Go to the repository settings page on Github
-2. Select tab `Service Hooks` (url: https://github.com/[GITHUB_USERNAME]/[REPO_NAME]/settings/hooks)
-3. Find `Travis` down to bottom
-4. Click `Test Hook` button
+1. 前往 Github 上项目的设置页面
+2. 点选 tab `Service Hooks` (url: https://github.com/[GITHUB_USERNAME]/[REPO_NAME]/settings/hooks)
+3. 在列表中下部找到 `Travis`
+4. 点 `Test Hook` 按钮
 
-### <a id="analyze-results"></a>Analyze results on Travis CI
+### <a id="analyze-results"></a>在 Travis CI 上分析结果
 
-#### <a id="results-page"></a>Project page on Travis CI
-The project page on Travis CI is: `https://travis-ci.org/[GITHUB_USERNAME]/[REPO_NAME]`
+#### <a id="results-page"></a>Travis CI 上的项目页面
+Travis CI 上的项目页面在 `https://travis-ci.org/[GITHUB_USERNAME]/[REPO_NAME]`
 
-<a class="post-image" href="/assets/images/posts/2013-06-15-results-page-on-travis-ci.png" title="Results page on Travis CI">
-  <img itemprop="image" src="/assets/images/posts/2013-06-15-results-page-on-travis-ci.png" alt="Results page on Travis CI" />
+<a class="post-image" href="/assets/images/posts/2013-06-15-results-page-on-travis-ci.png" title="Travis CI 的运行结果页面">
+  <img itemprop="image" src="/assets/images/posts/2013-06-15-results-page-on-travis-ci.png" alt="Travis CI 的运行结果页面" />
 </a>
 
-#### <a id="build-log"></a>Build log
-Clicking each job number will open up the build log for that particular jobs,
-which basically contains all console output during the build.
+#### <a id="build-log"></a>运行日志
+点击每个运行序号将会打开该次运行的的日志，里面基本包括所有在运行过程中的控制台输出内容。
 
-#### <a id="test-results"></a>Test Results
-The results are shown in the `rake` section in the build log.
-For example, here are the test results inside [this particular job's build log](https://travis-ci.org/yizeng/setup-selenium-webdriver-ruby-project-on-travis-ci/jobs/8109067):
+#### <a id="test-results"></a>测试结果
+测试结果显示在运行日志中的 `rake` 部分。
+例如，下面为[此次运行的日志里的测试结果](https://travis-ci.org/yizeng/setup-selenium-webdriver-ruby-project-on-travis-ci/jobs/8109067):
 
 	$ rake
 	/home/travis/.rvm/rubies/ruby-2.0.0-p0/bin/ruby -I"lib:test" -I"/home/travis/.rvm/gems/ruby-2.0.0-p0/gems/rake-10.0.4/lib" "/home/travis/.rvm/gems/ruby-2.0.0-p0/gems/rake-10.0.4/lib/rake/rake_test_loader.rb" "test/test_home_page.rb" 
@@ -165,18 +162,18 @@ For example, here are the test results inside [this particular job's build log](
 	ruby -v: ruby 2.0.0p0 (2013-02-24 revision 39474) [x86_64-linux]
 	The command "rake" exited with 0.
 
-#### <a id="build-status-images"></a>Build status images
-Travis CI provides [build status images](http://about.travis-ci.org/docs/user/status-images/) for projects,
-which are encouraged to be added to project sites, README files as good software development practices.
+#### <a id="build-status-images"></a>项目状态图标
+Travis CI 为项目提供了 [项目状态图标](http://about.travis-ci.org/docs/user/status-images/)，
+它们作为项目开发的好习惯，被鼓励用于项目主页或 README 文件中。
 
-The status image can be found at `https://travis-ci.org/[GITHUB_USERNAME]/[REPO_NAME].png`,
-with branches can be specified by URL query string like `?branch=master,staging,production`optionally.
+项目状态图标储存在 `https://travis-ci.org/[GITHUB_USERNAME]/[REPO_NAME].png`，
+branches 可以通过如 `?branch=master,staging,production` 的 URL query 字符串来额外添加。
 
-Alternatively, in the repository page of Travis CI, click settings icon button, then select `Status Image`,
-a dialog with all the options will be displayed, as shown in the screenshot below:
+除此之外，在 Travis CI 上的项目主页，点击设置按钮，然后选择 `Status Image`，
+一个对话框将会显示全部可能的选项，如下图所示：
 
-<a class="post-image" href="/assets/images/posts/2013-07-05-travis-ci-status-image-options.png" title="Travis CI status image options">
-  <img itemprop="image" src="/assets/images/posts/2013-07-05-travis-ci-status-image-options.png" alt="Travis CI status image options" />
+<a class="post-image" href="/assets/images/posts/2013-07-05-travis-ci-status-image-options.png" title="Travis CI 项目状态图标选项">
+  <img itemprop="image" src="/assets/images/posts/2013-07-05-travis-ci-status-image-options.png" alt="Travis CI 项目状态图标选项" />
 </a>
 
-The sample project's status is currently: <a class="image-link" href="https://travis-ci.org/yizeng/setup-selenium-webdriver-ruby-project-on-travis-ci" title="Travis CI build status"><img src="https://travis-ci.org/yizeng/setup-selenium-webdriver-ruby-project-on-travis-ci.png" alt="Travis CI build status" /></a>
+目前本示例项目的运行状态为： <a class="image-link" href="https://travis-ci.org/yizeng/setup-selenium-webdriver-ruby-project-on-travis-ci" title="Travis CI 项目状态"><img src="https://travis-ci.org/yizeng/setup-selenium-webdriver-ruby-project-on-travis-ci.png" alt="Travis CI 项目状态" /></a>
