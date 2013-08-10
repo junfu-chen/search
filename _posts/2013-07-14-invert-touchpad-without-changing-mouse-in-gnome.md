@@ -13,9 +13,9 @@ load_js_utils: true
 
 不过在经过了短暂的研究后，受此 [AskUbuntu 问答](http://askubuntu.com/questions/83590/how-do-i-disable-the-touchpad-using-the-upper-left-corner-on-an-hp-pavilion-dv6)启发，找到了一个简单的通过 GNOME [Gsettings](https://developer.gnome.org/gio/2.34/GSettings.html) 来设置的解决方法。
 
-### <a id="invert-touchpad"></a>反转触摸板
+## <a id="invert-touchpad"></a>反转触摸板
 
-#### <a id="using-cli"></a>通过命令行
+### <a id="using-cli"></a>通过命令行
 
 在 Gsettings 里, `touchpad` 下面有一个子键叫做 `left-handed`，是用来控制触摸板的左右键位属性的，该子键是一个 string 类型，默认键值为 "mouse"，但可以设置成 "left" 或 "right"。
 
@@ -23,7 +23,7 @@ load_js_utils: true
 
 > gsettings set org.gnome.settings-daemon.peripherals.touchpad left-handed left
 
-#### <a id="using-gui"></a>通过图形化界面 "dconf-editor"
+### <a id="using-gui"></a>通过图形化界面 "dconf-editor"
 
 Gsettings 有一个图形化工具叫做 "dconf-editor"，
 它使用二进制大对象数据库来保存全部设置和键值。(两者之间的关系和 “Windows Regitry” 与 “regedit” 类似。)
@@ -41,7 +41,7 @@ Gsettings 有一个图形化工具叫做 "dconf-editor"，
 	<img itemprop="image" src="/assets/images/posts/2013-07-14-dconf-editor-periperals-touchpad.png" alt="I从 dconf-editor 反转触摸板" />
 </a>
 
-### <a id="invert-mouse"></a>反转鼠标
+## <a id="invert-mouse"></a>反转鼠标
 
 如果也想将鼠标的左右键位反转，可以通过命令行、“系统设置”或是 "dconf-editor" 来进行。不过请注意 `peripherals.mouse` 下的子键 `left-handed` 所保存的键值是布尔类型，即只应被设置为 "true" 或 "false"。 
 

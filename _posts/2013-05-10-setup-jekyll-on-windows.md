@@ -9,7 +9,7 @@ load_js_utils: true
 ---
 {% include JB/setup %}
 
-### <a id="install-ruby"></a>安装 Ruby
+## <a id="install-ruby"></a>安装 Ruby
 
 1. 前往 <http://rubyinstaller.org/downloads/>
 2. 下载 `rubyinstaller-2.0.0-p0-x64.exe`
@@ -22,7 +22,7 @@ load_js_utils: true
 4. 检验安装是否成功
 > ruby --version
 
-### <a id="install-devkit"></a>安装 DevKit
+## <a id="install-devkit"></a>安装 DevKit
 [Github 上完整的安装教程](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit#installation-instructions)
 
 1. 前往 <http://rubyinstaller.org/downloads/>
@@ -37,33 +37,33 @@ load_js_utils: true
 > ruby dk.rb review<br />
 > ruby dk.rb install
 
-### <a id="install-jekyll"></a>安装 Jekyll
+## <a id="install-jekyll"></a>安装 Jekyll
 1. 确保 gem 已经正确安装
 > gem --version
 2. 安装 Jekyll gem
 > gem install jekyll
 
-### <a id="install-pygements"></a>安装 Pygments
+## <a id="install-pygements"></a>安装 Pygments
 
-#### <a id="install-python"></a>安装 Python
+### <a id="install-python"></a>安装 Python
 1. 前往 <http://www.python.org/download/>
 2. 下载 Python windows 安装包 `Python 2.7.4 Windows Installer`
 3. 添加安装路径 (如： `C:\Python27`) 至 PATH
 4. 检验 Python 安装是否成功
 > python --version
 
-#### <a id="install-easy-install"></a>安装 'Easy Install'
+### <a id="install-easy-install"></a>安装 'Easy Install'
 1. 前往 <https://pypi.python.org/pypi/setuptools#windows>
 2. 下载 'setuptools' `setuptools-0.6c11.win32-py2.7.exe`
 3. 添加 'Python Scripts' 路径 (如： `C:\Python27\Scripts`) 至 PATH
 
-#### <a id="install-pygements-2"></a>安装 Pygments
+### <a id="install-pygements-2"></a>安装 Pygments
 1. 确保 install 已经正确安装
 > easy_install --help
 2. 安装 Pygments
 > easy_install Pygments
 
-#### <a id="troubleshooting"></a>故障诊断
+### <a id="troubleshooting"></a>故障诊断
 1. 错误:
 
 		Generating...   Liquid Exception: No such file or directory - python c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/pygments.rb-0.4.2/lib/pygments/mentos.py in 2013-04-22-hello-world.md

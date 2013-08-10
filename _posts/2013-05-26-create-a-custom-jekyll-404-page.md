@@ -8,13 +8,13 @@ alias: [/2013/05/26/]
 ---
 {% include JB/setup %}
 
-###前言###
+##前言
 本文仅针对于所有储存在 [GitHub Page](http://pages.github.com/) 服务器上的 Jekyll 网站而言，对于使用其他服务器的 Jekyll 网站情况可能有所不同。同时还需要注意的是，自定义的 404 页面仅对使用了自己域名的网站有效。查看更详细官方的文档，请点击 GitHub Pages 的官方文档 [Custom 404 Pages - GitHub Help](https://help.github.com/articles/custom-404-pages)。
 
-###创建 404.html 文件###
+##创建 404.html 文件
 在 Jekyll 网站的根目录下创建 `404.html`，此文件必须为 HTML 格式。
 
-###添加 YAML Front Matter###
+##添加 YAML Front Matter
 由于本文的目标是创建一个和其他所有页面主题一致的自定义 404 页面，而非重写一个单独的 404.html，所以首先添加[YAML Front Matter](http://jekyllrb.com/docs/frontmatter/)至 404.html 的头部并设置 layout 为 "page"。
 
 	---
@@ -22,7 +22,7 @@ alias: [/2013/05/26/]
 	title: 404
 	---
 
-###添加 404 内容###
+##添加 404 内容
 在 [YAML Front Matter](http://jekyllrb.com/docs/frontmatter/) 部分后添加真正的404内容。
 
 	---
@@ -31,7 +31,7 @@ alias: [/2013/05/26/]
 	---
 	<p>对不起，无法找到该页。 =(</p>
 
-###自动跳转 404 页面###
+##自动跳转 404 页面
 为了让 404 页面能自动跳转，迄今为止所找到的最简单的方法是通过 HTML meta 标签，`meta http-equiv="refresh"`。
 
 1. 在 Jekyll 的 default.html 文件里 (例如： 本网站的在 /_includes/themes/THEME_NAME/default.html), 在 `<head>` 标签内添加一个 `<meta>` 标签。 ([W3schools 示例](http://www.w3schools.com/tags/att_meta_http_equiv.asp))
@@ -50,7 +50,7 @@ alias: [/2013/05/26/]
 
 <script src="https://gist.github.com/yizeng/5428d29c3d5af224475b.js"></script>
 
-###测试 404 页面###
+##测试 404 页面
 
 1. 在本地使用命令 `jekyll serve` 来 build Jekyll 服务器，然后前往 `localhost:4000/404.html`, 看看自定义的 404 页面是否正常工作。
 
