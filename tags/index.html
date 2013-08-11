@@ -15,7 +15,7 @@ priority: 0.8
 
 
 {% for tag in site.tags %} 
-<h3 id="{{ tag[0] | replace:' ','-' }}-ref">{{ tag[0] }}</h3>
+<h3 id="{{ tag[0] | replace:' ','-' | replace:'#','sharp' }}-ref">{{ tag[0] }}</h3>
 <ul class="posts">
     {% assign pages_list = tag[1] %}
     {% include JB/pages_list %}
