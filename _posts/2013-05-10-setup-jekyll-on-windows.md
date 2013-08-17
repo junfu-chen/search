@@ -5,9 +5,11 @@ description: "如何在 Windows 上安装 Jekyll"
 category: notes
 tags: [jekyll, ruby]
 alias: [/2013/05/10/]
-load_js_utils: true
+js_utils: fancybox, toc
 ---
 {% include JB/setup %}
+
+<div id="toc"></div>
 
 ## <a id="install-ruby"></a>安装 Ruby
 

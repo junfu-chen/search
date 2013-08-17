@@ -5,16 +5,19 @@ description: "如何使用 Selenium WebDriver C# 和 Ruby 来设置浏览器（C
 category: articles
 tags: [c#, phantomjs, ruby, webdriver, selenium]
 alias: [/2013/08/10/]
+js_utils: toc
 ---
 {% include JB/setup %}
 
-本文提供了如何使用 Selenium WebDriver C# and Ruby 给 Chrome，Firefox，IE，PhantomJS 浏览器设置 User Agent 的方法。
+本文展示了如何使用 Selenium WebDriver C# and Ruby 给 Chrome，Firefox，IE，PhantomJS 浏览器设置 User Agent 的方法。
 
 > 环境:<br />
 > Linux Mint 15, Ruby 2.0.0p247, Selenium 2.34.0, Firefox 23.0, Chrome 28, PhantomJS 1.9.1
 
 > User Agent 示例（ipad）:<br />
 > Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10
+
+<div id="toc"></div>
 
 ## <a id="chrome"></a>Chrome
 

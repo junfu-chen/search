@@ -5,9 +5,11 @@ description: "如何在 Travis CI 上创建一个使用 headless PhantomJS 浏�
 category: articles
 tags: [github, phantomjs, ruby, selenium, travis-ci, webdriver]
 alias: [/2013/06/15/]
-load_js_utils: true
+js_utils: fancybox, toc
 ---
 {% include JB/setup %}
+
+<div id="toc"></div>
 
 ## <a id="create-repo"></a>在 Github 上创建一个代码仓库
 

@@ -5,13 +5,15 @@ description: "如何在 Linux Mint 15 Cinnamon 中反转触摸板至左撇子键
 category: articles
 tags: [linux mint]
 alias: [/2013/07/14/]
-load_js_utils: true
+js_utils: fancybox, toc
 ---
 {% include JB/setup %}
 
 作为一个使用反转了左右键位的触摸板，却使用正常键位鼠标的左撇子用户，在安装了 Linux Mint 15 Cinnamon 桌面之后，不能从 "System Settings -> Mouse and Touchpad" 分别设置触摸板和鼠标的左右键位是一件很恼人的事情。
 
 不过在经过了短暂的研究后，受此 [AskUbuntu 问答](http://askubuntu.com/questions/83590/how-do-i-disable-the-touchpad-using-the-upper-left-corner-on-an-hp-pavilion-dv6)启发，找到了一个简单的通过 GNOME [Gsettings](https://developer.gnome.org/gio/2.34/GSettings.html) 来设置的解决方法。
+
+<div id="toc"></div>
 
 ## <a id="invert-touchpad"></a>反转触摸板
 

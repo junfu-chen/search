@@ -77,11 +77,58 @@
         </footer>
     </div><!-- page -->
 
-    {% if page.load_js_utils == true %}
+    {% if page.js_utils != null %}
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/assets/js/jquery-1.10.2.min.js"><\/script>')</script>
-        <script type="text/javascript" src="/assets/js/load_image_tools.js"></script>
+
+        {% if page.js_utils contains "fancybox" %}
+            <script src="/assets/js/fancybox/jquery.fancybox.pack.js?v=2.1.4"></script>
+            <script src="/assets/js/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+            <script type="text/javascript">
+                $("head").append('<link rel="stylesheet" href="/assets/js/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
+                $("head").append('<link rel="stylesheet" href="/assets/js/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
+                $(".post-image").fancybox({
+                    prevEffect      : 'none',
+                    nextEffect      : 'none',
+                    closeBtn        : true,
+                    helpers     : {
+                        title   : { type : 'inside' },
+                        buttons : {}
+                    }
+                });
+            </script>
+        {% endif %}
+
+        {% if page.js_utils contains "toc" %}
+            <script type="text/javascript">
+                var ToC = "<nav role='navigation' class='toc'><ol>";
+                var newLine, el, title, link;
+                $("article h2").each(function() {
+                    secondHeading = $(this);
+                    ToC += createListItem(secondHeading);
+
+                    var thirdHeadingInside = secondHeading.nextUntil("article h2", "h3");
+                    if(thirdHeadingInside.length != 0){
+                        ToC += "<ul>";
+                        thirdHeadingInside.each(function() {
+                            thirdHeading = $(this);
+                            ToC += createListItem(thirdHeading);
+                        });
+                        ToC += "</ul>";
+                    }
+                });
+                ToC += "</ol>" + "</nav>";
+
+                function createListItem(heading) {
+                    link = "#" + heading.children("a").attr("id");
+                    return "<li>" + "<a href='" + link + "'>" + heading.text() + "</a>" + "</li>";
+                }
+                $("#toc").prepend(ToC);
+            </script>
+        {% endif %}
     {% endif %}
+
     {% include JB/analytics %}
 </body>
 </html>
