@@ -634,6 +634,10 @@ pre {
 .the-footer address {
   font-style: normal
 }
+.the-footer a {
+  color: #FF9900;
+  border: 0;
+}
 .the-footer h4 {
   margin-top: 0
 }
