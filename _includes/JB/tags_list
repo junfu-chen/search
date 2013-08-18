@@ -23,12 +23,14 @@
     {% include custom/tags_list %}
 {% else %}
     {% if tags_list.first[0] == null %}
-        {% for tag in tags_list %} 
-            <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag | replace:' ','-' | replace:'#','sharp' }}-ref">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li>
+        {% for tag in tags_list %}
+            {% assign actual_tag_name = tag | replace:'&#32;',' ' %}
+            <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ actual_tag_name | replace:' ','-' | replace:'#','sharp' }}-ref">{{ actual_tag_name }} <span>{{ site.tags[actual_tag_name].size }}</span></a></li>
         {% endfor %}
     {% else %}
-        {% for tag in tags_list %} 
-            <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag[0] | replace:' ','-' | replace:'#','sharp' }}-ref">{{ tag[0] }} <span>{{ tag[1].size }}</span></a></li>
+        {% for tag in tags_list %}
+            {% assign actual_tag_name = tag[0] | replace:'&#32;',' ' %}
+            <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ actual_tag_name | replace:' ','-' | replace:'#','sharp' }}-ref">{{ actual_tag_name }} <span>{{ tag[1].size }}</span></a></li>
         {% endfor %}
     {% endif %}
 {% endif %}

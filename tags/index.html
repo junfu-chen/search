@@ -8,16 +8,24 @@ priority: 0.8
 ---
 {% include JB/setup %}
 
+{% capture tags %}
+    {% for tag in site.tags %}
+        {{ tag[0] | replace:' ','&#32;' }}
+    {% endfor %}
+{% endcapture %}
+
+{% assign sorted_tags = tags | split:' ' | sort %}
+
 <ul class="tag_box inline">
-    {% assign tags_list = site.tags %}
+    {% assign tags_list = sorted_tags %}
     {% include JB/tags_list %}
 </ul>
 
-
-{% for tag in site.tags %} 
-<h3 id="{{ tag[0] | replace:' ','-' | replace:'#','sharp' }}-ref">{{ tag[0] }}</h3>
-<ul class="posts">
-    {% assign pages_list = tag[1] %}
-    {% include JB/pages_list %}
-</ul>
+{% for tag in sorted_tags %}
+    {% assign actual_tag_name = tag | replace:'&#32;',' ' %}
+    <h3 id="{{ actual_tag_name | replace:' ','-' | replace:'#','sharp' }}-ref">{{ actual_tag_name }}</h3>
+    <ul class="posts">
+        {% assign pages_list = site.tags[actual_tag_name] %}
+        {% include JB/pages_list %}
+    </ul>
 {% endfor %}
