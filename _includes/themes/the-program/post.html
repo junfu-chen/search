@@ -30,12 +30,12 @@
                             </p>
                             <ul class="list-category list-linear">
                                 <li class="list-head">分类: </li>
-                                {% assign categories_list = page.categories %}
+                                {% assign categories_list = page.categories | sort %}
                                 {% include JB/categories_list %}
                             </ul>
                             <ul class="list-tag list-linear">
                                 <li class="list-head">标签: </li>
-                                {% assign tags_list = page.tags %}
+                                {% assign tags_list = page.tags | sort %}
                                 {% include JB/tags_list %}
                             </ul>
                         </div><!-- meta -->
