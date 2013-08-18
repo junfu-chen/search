@@ -5,7 +5,7 @@ description: "如何在 Windows 上安装 Jekyll"
 category: notes
 tags: [jekyll, ruby]
 alias: [/2013/05/10/]
-js_utils: fancybox, toc
+js_utils: fancybox, toc, unveil
 ---
 {% include JB/setup %}
 
@@ -18,8 +18,9 @@ js_utils: fancybox, toc
 3. 通过安装包安装
 	- 最好保持默认的路径 C:\Ruby200-x64，因为安装包明确提出 “请不要使用带有空格的文件夹 (如： Program Files)”。
 	- 勾选 "Add Ruby executables to your PATH"
+	
 <a class="post-image" href="/assets/images/posts/2013-05-11-ruby-installer.png" title="Windows Ruby 安装包">
-	<img itemprop="image" src="/assets/images/posts/2013-05-11-ruby-installer.png" alt="Windows Ruby 安装包" />
+	<img itemprop="image" data-src="/assets/images/posts/2013-05-11-ruby-installer.png" src="/assets/js/unveil/loader.gif" alt="Windows Ruby 安装包" />
 </a>
 4. 检验安装是否成功
 > ruby --version

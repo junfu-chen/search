@@ -5,7 +5,7 @@ description: "如何在 Travis CI 上创建一个使用 headless PhantomJS 浏�
 category: articles
 tags: [github, phantomjs, ruby, selenium, travis-ci, webdriver]
 alias: [/2013/06/15/]
-js_utils: fancybox, toc
+js_utils: fancybox, toc, unveil
 ---
 {% include JB/setup %}
 
@@ -122,7 +122,7 @@ before_install:
 3. 开启此代码仓库的 hook
 
 <a class="post-image" href="/assets/images/posts/2013-06-09-enable-hook-on-travis-ci.png" title="在 Travis CI 上开启 hook">
-  <img itemprop="image" src="/assets/images/posts/2013-06-09-enable-hook-on-travis-ci.png" alt="在 Travis CI 上开启 hook" />
+  <img itemprop="image" data-src="/assets/images/posts/2013-06-09-enable-hook-on-travis-ci.png" src="/assets/js/unveil/loader.gif" alt="在 Travis CI 上开启 hook" />
 </a>
 
 ## <a id="run-project"></a>在 Travis CI 上运行项目
@@ -142,7 +142,7 @@ before_install:
 Travis CI 上的项目页面在 `https://travis-ci.org/[GITHUB_USERNAME]/[REPO_NAME]`
 
 <a class="post-image" href="/assets/images/posts/2013-06-15-results-page-on-travis-ci.png" title="Travis CI 的运行结果页面">
-  <img itemprop="image" src="/assets/images/posts/2013-06-15-results-page-on-travis-ci.png" alt="Travis CI 的运行结果页面" />
+  <img itemprop="image" data-src="/assets/images/posts/2013-06-15-results-page-on-travis-ci.png" src="/assets/js/unveil/loader.gif" alt="Travis CI 的运行结果页面" />
 </a>
 
 ### <a id="build-log"></a>运行日志
@@ -175,7 +175,7 @@ branches 可以通过如 `?branch=master,staging,production` 的 URL query 字�
 一个对话框将会显示全部可能的选项，如下图所示：
 
 <a class="post-image" href="/assets/images/posts/2013-07-05-travis-ci-status-image-options.png" title="Travis CI 项目状态图标选项">
-  <img itemprop="image" src="/assets/images/posts/2013-07-05-travis-ci-status-image-options.png" alt="Travis CI 项目状态图标选项" />
+  <img itemprop="image" data-src="/assets/images/posts/2013-07-05-travis-ci-status-image-options.png" src="/assets/js/unveil/loader.gif" alt="Travis CI 项目状态图标选项" />
 </a>
 
 目前本示例项目的运行状态为： <a class="image-link" href="https://travis-ci.org/yizeng/setup-selenium-webdriver-ruby-project-on-travis-ci" title="Travis CI 项目状态"><img src="https://travis-ci.org/yizeng/setup-selenium-webdriver-ruby-project-on-travis-ci.png" alt="Travis CI 项目状态" /></a>

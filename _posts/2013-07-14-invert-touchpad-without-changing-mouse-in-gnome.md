@@ -5,7 +5,7 @@ description: "如何在 Linux Mint 15 Cinnamon 中反转触摸板至左撇子键
 category: articles
 tags: [linux mint]
 alias: [/2013/07/14/]
-js_utils: fancybox, toc
+js_utils: fancybox, toc, unveil
 ---
 {% include JB/setup %}
 
@@ -40,7 +40,7 @@ Gsettings 有一个图形化工具叫做 "dconf-editor"，
 4. 在 `touchpad` 下点选子键 `left-handed` 并将其键值设置为 `left`。
 
 <a class="post-image" href="/assets/images/posts/2013-07-14-dconf-editor-periperals-touchpad.png" title="从 dconf-editor 反转触摸板">
-	<img itemprop="image" src="/assets/images/posts/2013-07-14-dconf-editor-periperals-touchpad.png" alt="I从 dconf-editor 反转触摸板" />
+	<img itemprop="image" data-src="/assets/images/posts/2013-07-14-dconf-editor-periperals-touchpad.png" src="/assets/js/unveil/loader.gif" alt="从 dconf-editor 反转触摸板" />
 </a>
 
 ## <a id="invert-mouse"></a>反转鼠标
