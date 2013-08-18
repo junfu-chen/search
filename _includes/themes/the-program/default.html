@@ -103,36 +103,37 @@
         {% if page.js_utils contains "unveil" %}
             <script src="/assets/js/unveil/jquery.unveil.min.js"></script>
             <script type="text/javascript">
-                $(document).ready(function() {
-                  $(".post-image > img").unveil(150);
+                $(document).ready(function () {
+                    $(".post-image > img").unveil(150);
                 });
             </script>
         {% endif %}
 
         {% if page.js_utils contains "toc" %}
             <script type="text/javascript">
+                function createListItem(heading) {
+                    var link = "#" + heading.children("a").attr("id");
+                    return "<li>" + "<a href='" + link + "'>" + heading.text() + "</a>" + "</li>";
+                }
+
                 var ToC = "<nav role='navigation' class='toc'><ol>";
-                var newLine, el, title, link;
-                $("article h2").each(function() {
+                $("article h2").each(function () {
+                    var secondHeading, thirdHeadingInside;
+
                     secondHeading = $(this);
                     ToC += createListItem(secondHeading);
 
-                    var thirdHeadingInside = secondHeading.nextUntil("article h2", "h3");
-                    if(thirdHeadingInside.length != 0){
+                    thirdHeadingInside = secondHeading.nextUntil("article h2", "h3");
+                    if (thirdHeadingInside.length !== 0) {
                         ToC += "<ul>";
-                        thirdHeadingInside.each(function() {
-                            thirdHeading = $(this);
-                            ToC += createListItem(thirdHeading);
+                        thirdHeadingInside.each(function () {
+                            ToC += createListItem($(this));
                         });
                         ToC += "</ul>";
                     }
                 });
                 ToC += "</ol>" + "</nav>";
 
-                function createListItem(heading) {
-                    link = "#" + heading.children("a").attr("id");
-                    return "<li>" + "<a href='" + link + "'>" + heading.text() + "</a>" + "</li>";
-                }
                 $("#toc").prepend(ToC);
             </script>
         {% endif %}
