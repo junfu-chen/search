@@ -5,7 +5,7 @@ module Pages
 	class BasePage
 
 		SITE_TITLE = 'Yi Zeng'
-		SITE_URL = 'http://yizeng.me'
+		SITE_URL = 'http://cn.yizeng.me'
 		ALL_HEADER_LINKS = %w[articles notes categories tags]
 
 		attr_reader :page_title
