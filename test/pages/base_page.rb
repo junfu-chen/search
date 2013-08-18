@@ -4,9 +4,9 @@ require './test/pages/header.rb'
 module Pages
 	class BasePage
 
-		SITE_TITLE = 'Yi Zeng'
+		SITE_TITLE = '曾屹'
 		SITE_URL = 'http://cn.yizeng.me'
-		ALL_HEADER_LINKS = %w[articles notes categories tags]
+		ALL_HEADER_LINKS = %w[文章列表 笔记列表 博文分类 博文标签]
 
 		attr_reader :page_title
 		attr_reader :page_url
