@@ -1,14 +1,15 @@
 ---
 layout: page
 title: "鸣谢"
-description: "Acknowledgements page for things used when building up 
+description: "Acknowledgements page for things used when building up
 Yi Zeng's personal website."
 priority: 0.5
+js_utils: back-to-top
 ---
 {% include JB/setup %}
 
 ## <a id="jekyll"></a>Jekyll
-<table border="1" class="acknowledgements">
+<table border="1" class="data">
     <tr>
         <th>名称</th>
         <th>许可证</th>
@@ -47,7 +48,7 @@ priority: 0.5
 </table>
 
 ## <a id="jekyll-plugins"></a>Jekyll 插件
-<table border="1" class="acknowledgements">
+<table border="1" class="data">
     <tr>
         <th>名称</th>
         <th>许可证</th>
@@ -71,7 +72,7 @@ priority: 0.5
 </table>
 
 ## <a id="javascript"></a>JavaScript
-<table border="1" class="acknowledgements">
+<table border="1" class="data">
     <tr>
         <th>名称</th>
         <th>许可证</th>
@@ -105,7 +106,7 @@ priority: 0.5
 </table>
 
 ## <a id="images"></a>图片
-<table border="1" class="acknowledgements">
+<table border="1" class="data">
     <tr>
         <th>名称</th>
         <th>许可证</th>
@@ -144,7 +145,7 @@ priority: 0.5
 </table>
 
 ## <a id="fonts"></a>字体
-<table border="1" class="acknowledgements">
+<table border="1" class="data">
     <tr>
         <th>名称</th>
         <th>许可证</th>
@@ -168,7 +169,7 @@ priority: 0.5
 </table>
 
 ## <a id="ui-testing"></a>UI 测试
-<table border="1" class="acknowledgements">
+<table border="1" class="data">
     <tr>
         <th>名称</th>
         <th>许可证</th>

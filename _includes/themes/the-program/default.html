@@ -76,6 +76,7 @@
                     <!--p class="licence"></p-->
                 </div><!-- unit-foot-inner -->
             </div><!-- unit-foot -->
+            <a href="#" class="back-to-top">Back to Top</a>
         </footer>
     </div><!-- page -->
 
@@ -137,6 +138,37 @@
                 ToC += "</ol>" + "</nav>";
 
                 $("#toc").prepend(ToC);
+            </script>
+        {% endif %}
+
+        {% if page.js_utils contains "toc" or page.js_utils contains "back-to-top" %}
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var offset = 220, duration = 500;
+                    $(window).scroll(function () {
+                        if ($(window).width() > 960) {
+                            if ($(this).scrollTop() > offset) {
+                                $('.back-to-top').fadeIn(duration);
+                            } else {
+                                $('.back-to-top').fadeOut(duration);
+                            }
+                        }
+                    });
+                    $(window).resize(function () {
+                        if ($(window).width() < 960) {
+                            $('.back-to-top').fadeOut(duration);
+                        }
+                        if ($(window).width() >= 960 && $(this).scrollTop() > offset) {
+                            $('.back-to-top').fadeIn(duration);
+                        }
+                    });
+
+                    $('.back-to-top').click(function (event) {
+                        event.preventDefault();
+                        $('html, body').animate({scrollTop: 0}, duration);
+                        return false;
+                    });
+                });
             </script>
         {% endif %}
     {% endif %}
