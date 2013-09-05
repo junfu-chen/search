@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "更新 App.config 里的 AppSettings 属性及自定义配置节"
+title: "在运行时更新 App.config 里的 AppSettings 属性及自定义配置节"
 description: "如何在运行时更新（添加，修改或删除）App.config 里的 AppSettings 属性及自定义配置节"
 category: articles
 tags: [c#, .net]
