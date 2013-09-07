@@ -2,4 +2,4 @@ language: ruby
 
 branches:
   only:
-    - master
+    - gh-pages
