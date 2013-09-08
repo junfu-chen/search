@@ -1,3 +1,3 @@
 #!/bin/bash
 
-jekyll serve --watch --port=4001
+jekyll serve --watch --drafts --port=4001
