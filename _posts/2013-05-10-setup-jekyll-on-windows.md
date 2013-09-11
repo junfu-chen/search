@@ -2,7 +2,7 @@
 layout: post
 title: "在 Windows 上安装 Jekyll"
 description: "如何在 Windows 上安装 Jekyll"
-category: notes
+category: articles
 tags: [jekyll, ruby]
 alias: [/2013/05/10/]
 js_utils: fancybox, toc, unveil
