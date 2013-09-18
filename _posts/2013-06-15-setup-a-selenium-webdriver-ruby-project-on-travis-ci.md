@@ -9,6 +9,8 @@ js_utils: fancybox, toc, unveil
 ---
 {% include JB/setup %}
 
+> 原文已于2013年9月10日更新，请点击[本链接](http://yizeng.me/2013/06/15/setup-a-selenium-webdriver-ruby-project-on-travis-ci/)查看最新版本
+
 <div id="toc"></div>
 
 ## <a id="create-repo"></a>在 Github 上创建一个代码仓库

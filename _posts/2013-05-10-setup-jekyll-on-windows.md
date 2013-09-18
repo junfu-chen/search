@@ -9,6 +9,8 @@ js_utils: fancybox, toc, unveil
 ---
 {% include JB/setup %}
 
+> 原文已于2013年9月10日更新，请点击[本链接](http://yizeng.me/2013/05/10/setup-jekyll-on-windows/)查看最新版本
+
 <div id="toc"></div>
 
 ## <a id="install-ruby"></a>安装 Ruby
