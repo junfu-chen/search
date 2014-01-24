@@ -1,19 +1,15 @@
 desc "Start Jekyll locally"
 task :jekyll do
-	puts 'Usage: rake jekyll [port=4001] [trace=true] [detach=true] [os=windows]'
+	puts 'Usage: rake jekyll [port=4001] [trace=true] [detach=true]'
+
 	if ENV['help'].nil?
 		port = ENV['port'] || '4001'
 		trace = ENV['trace'] == 'true' ? '--trace' : ''
 		detach = ENV['detach'] == 'true' ? '--detach' : ''
 
 		# Set active code page to avoid encoding issues on Windows
-		case ENV['os']
-			when '', 'linux', 'Linux'
-				os = 'linux'
-			when 'win', 'windows', 'Windows'
-				os = 'windows'
-		end
-		if os == 'windows'
+		platforms = %w[mswin mingw32]
+		if platforms.any? { |platform| RUBY_PLATFORM.downcase.include? platform }
 			system 'chcp 65001'
 		end
 

@@ -44,10 +44,10 @@
                     <nav class="nav-global">
                         <ul>
                             <li class="logo"><a href="/">{{ site.title }}</a></li>
-                            <li class="article"><a href="/articles">文章列表</a></li>
-                            <li class="note"><a href="/notes">笔记列表</a></li>
-                            <li class="category"><a href="/categories">博文分类</a></li>
-                            <li class="tag"><a href="/tags">博文标签</a></li>
+                            <li class="link"><a href="/articles">文章列表</a></li>
+                            <li class="link"><a href="/notes">笔记列表</a></li>
+                            <li class="link"><a href="/categories">博文分类</a></li>
+                            <li class="link"><a href="/tags">博文标签</a></li>
                         </ul>
                     </nav>
                 </div><!-- unit-inner -->
@@ -147,9 +147,9 @@
         {% if page.js_utils contains "toc" or page.js_utils contains "back-to-top" %}
             <script type="text/javascript">
                 $(document).ready(function () {
-                    var offset = 220, duration = 500;
+                    var offset = 220, duration = 500, width = 1080;
                     $(window).scroll(function () {
-                        if ($(window).width() > 960) {
+                        if ($(window).width() > width) {
                             if ($(this).scrollTop() > offset) {
                                 $('.back-to-top').fadeIn(duration);
                             } else {
@@ -158,10 +158,10 @@
                         }
                     });
                     $(window).resize(function () {
-                        if ($(window).width() < 960) {
+                        if ($(window).width() < width) {
                             $('.back-to-top').fadeOut(duration);
                         }
-                        if ($(window).width() >= 960 && $(this).scrollTop() > offset) {
+                        if ($(window).width() >= width && $(this).scrollTop() > offset) {
                             $('.back-to-top').fadeIn(duration);
                         }
                     });

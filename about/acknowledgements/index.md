@@ -6,8 +6,6 @@ Yi Zeng's personal website."
 priority: 0.5
 js_utils: back-to-top
 ---
-{% include JB/setup %}
-
 ## <a id="jekyll"></a>Jekyll
 <table border="1" class="data-table">
     <tr>
@@ -186,6 +184,11 @@ js_utils: back-to-top
         <th>描述</th>
     </tr>
     <tr>
+        <td><a href="http://www.fontsquirrel.com/">Font Squirrel</a></td>
+        <td></td>
+        <td>创建网页字体文件</td>
+    </tr>
+    <tr>
         <td><a href="http://www.google.com/fonts/specimen/Nova+Square">Nova Square</a></td>
         <td><a href="http://scripts.sil.org/OFL">SIL 开源字体许可证, 1.1</a></td>
         <td></td>
@@ -194,11 +197,6 @@ js_utils: back-to-top
         <td><a href="http://www.google.com/fonts/specimen/Maven+Pro">Maven Pro</a></td>
         <td><a href="http://scripts.sil.org/OFL">SIL 开源字体许可证, 1.1</a></td>
         <td></td>
-    </tr>
-    <tr>
-        <td><del><a href="http://www.fontsquirrel.com/">Font Squirrel</a></del></td>
-        <td></td>
-        <td><del>创建网页字体文件</del></td>
     </tr>
 </table>
 
