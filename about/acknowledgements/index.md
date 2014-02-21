@@ -63,6 +63,11 @@ js_utils: back-to-top
         <td>生成文章 URL 别名</td>
     </tr>
     <tr>
+        <td><a href="https://github.com/christian-fei/Simple-Jekyll-Search">Jekyll Simple Search</a></td>
+        <td><a href="https://github.com/christian-fei/Simple-Jekyll-Search#license">MIT 许可证</a></td>
+        <td>博客文章搜索功能</td>
+    </tr>
+    <tr>
         <td><del><a href="https://github.com/aucor/jekyll-plugins">strip.rb</a></del></td>
         <td><del><a href="https://github.com/aucor/jekyll-plugins/blob/master/LICENCE">MIT 许可证</a></del></td>
         <td><del>移除 HTML 空格</del></td>
@@ -100,6 +105,11 @@ js_utils: back-to-top
         <td><a href="http://luis-almeida.github.io/unveil/">Unveil.js</a></td>
         <td><a href="http://opensource.org/licenses/MIT">MIT 许可证</a></td>
         <td>jQuery 插件用来延迟载入图片</td>
+    </tr>
+    <tr>
+        <td><a href="http://github.hubspot.com/pace/">PACE</a></td>
+        <td><a href="https://github.com/HubSpot/pace/blob/master/LICENSE">PACE 许可证</a></td>
+        <td>页面加载进度条</td>
     </tr>
 </table>
 
@@ -150,14 +160,19 @@ js_utils: back-to-top
         <td>创建背景图片</td>
     </tr>
     <tr>
-        <td><a href="http://www.PEPSized.com">FLAT but not Flat Social Media Icons</a></td>
-        <td>开放许可证</td>
-        <td>社交网站图标集</td>
+        <td><a href="http://simpleicons.org/">Simple Icons</a></td>
+        <td><a href="https://github.com/danleech/simple-icons#licence">Free Art 许可证 1.3</a></td>
+        <td>社交图标集</td>
     </tr>
     <tr>
         <td><a href="http://preloaders.net/">Preloaders.net</a></td>
         <td><a href="http://preloaders.net/en/terms_of_use">开放许可证</a></td>
         <td>创建载入图片的图标</td>
+    </tr>
+    <tr>
+        <td><a href="http://www.wpzoom.com">WPZOOM Developer Icon Set</a></td>
+        <td><a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></td>
+        <td>搜索按钮图标</td>
     </tr>
     <tr>
         <td><del><a href="http://www.patternify.com/">Patternify</a></del></td>
@@ -168,6 +183,11 @@ js_utils: back-to-top
         <td><del><a href="http://www.subtlepatterns.com">Subtle Patterns</a></del></td>
         <td><del><a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">CC BY-SA 3.0</a></del></td>
         <td><del>Tileable textured patterns</del></td>
+    </tr>
+    <tr>
+        <td><del><a href="http://www.PEPSized.com">FLAT but not Flat Social Media Icons</a></del></td>
+        <td><del>开放许可证</del></td>
+        <td><del>社交网站图标集</del></td>
     </tr>
     <tr>
         <td><del><a href="http://icondock.com/free/vector-social-media-icons">Vector Social Media Icons</a></del></td>
@@ -194,8 +214,8 @@ js_utils: back-to-top
         <td></td>
     </tr>
     <tr>
-        <td><a href="http://www.google.com/fonts/specimen/Maven+Pro">Maven Pro</a></td>
-        <td><a href="http://scripts.sil.org/OFL">SIL 开源字体许可证, 1.1</a></td>
+        <td><del><a href="http://www.google.com/fonts/specimen/Maven+Pro">Maven Pro</a></del></td>
+        <td><del><a href="http://scripts.sil.org/OFL">SIL 开源字体许可证, 1.1</a></del></td>
         <td></td>
     </tr>
 </table>

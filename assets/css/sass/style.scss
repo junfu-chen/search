@@ -1,6 +1,13 @@
-@import "normalize";
+@import "./support/normalize";
+
+@import "variables";
 @import "fonts";
 @import "main";
-@import "highlight";
-@import "helper";
-@import "gist";
+@import "social-links";
+@import "search";
+@import "responsive";
+
+@import "./support/highlight";
+@import "./support/helper";
+@import "./support/gist";
+@import "./support/pace"
