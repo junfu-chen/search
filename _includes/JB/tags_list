@@ -6,7 +6,7 @@
         2) include JB/tags_list
         example:
         <ul>
-        {% assign tags_list = site.tags %}  
+        {% assign tags_list = site.tags %}
         {% include JB/tags_list %}
         </ul>
 
