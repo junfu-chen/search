@@ -13,16 +13,35 @@
     {% if page.url == "/404.html" %}<meta http-equiv="refresh" content="5; url=/">{% endif %}
     <title>{% if page.url != "/index.html" %} {{ page.title }} - {% endif %}{{ site.title }}</title>
 
+    <!-- Loading progess bar plugin -->
+    <!--[if !IE]> -->
+    <script src="/assets/js/pace.min.js"></script>
+    <style>
+        .pace .pace-progress {
+            -webkit-transition: width 1s;
+            -moz-transition: width 1s;
+            -o-transition: width 1s;
+            transition: width 1s;
+            background: #ff9900;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            height: 2px;
+        }
+
+        .pace-inactive {
+            display: none;
+        }
+    </style>
+    <!-- <![endif]-->
+
     <link href='/assets/css/style.css' rel="stylesheet" type="text/css">
     <link href="/rss.xml" rel="alternate" title="{{ site.title }}" type="application/rss+xml">
 
-    <!--[if lt IE 9]>
+    <!--[if IE]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
         <script>window.Modernizr || document.write('<script src="/assets/js/modernizr-2.0.6.min.js"><\/script>')</script>
-    <![endif]-->
-    <!--[if gte IE 9]>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-        <script>window.Modernizr || document.write('<script src="/assets/js/modernizr-2.6.2.min.js"><\/script>')</script>
     <![endif]-->
     <!--[if !IE]> -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -31,23 +50,36 @@
 </head>
 
 <body>
-    <!--[if lt IE 9]>
+    <!--[if IE]>
         <p class="site-notice">您正在使用过时的浏览器. 请<a href="http://browsehappy.com/" target="_blank">升级</a>或<a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">开启 Google Chrome Frame</a> 来提升使用体验。</p>
     <![endif]-->
     <noscript>
         <p class="site-notice">本站某些功能需要 JavaScript支持。请参阅此网站教程来<a href="http://www.enable-javascript.com/" target="_blank">开启浏览器的 JavaScript 功能</a>。</p>
     </noscript>
+
+    <div class="search-wrapper">
+        <div class="search-form">
+            <input type="text" class="search-field" placeholder="搜索...">
+            <a class="btn-close">关闭</a>
+            <ul class="results post-list"></ul>
+        </div>
+    </div>
+
     <div id="page" class="hentry">
         <header class="the-header">
             <div class="unit-head">
                 <div class="unit-inner unit-head-inner">
                     <nav class="nav-global">
                         <ul>
-                            <li class="logo"><a href="/">{{ site.title }}</a></li>
-                            <li class="article"><a href="/articles">文章列表</a></li>
-                            <li class="note"><a href="/notes">笔记列表</a></li>
-                            <li class="category"><a href="/categories">博文分类</a></li>
-                            <li class="tag"><a href="/tags">博文标签</a></li>
+                            <li class="logo">
+                                <a href="/">{{ site.title }}</a>
+                                <!--[if !IE]> --><button class="btn-search"></button><!-- <![endif]-->
+                            </li>
+                            <li class="nav-link"><a href="/articles">文章列表</a></li>
+                            <li class="nav-link"><a href="/notes">笔记列表</a></li>
+                            <li class="nav-link"><a href="/categories">博文分类</a></li>
+                            <li class="nav-link"><a href="/tags">博文标签</a></li>
+                            <!--[if !IE]> --><li><a class="btn-search" href="#">文章搜索</a></li><!-- <![endif]-->
                         </ul>
                     </nav>
                 </div><!-- unit-inner -->
@@ -69,11 +101,13 @@
                 <div class="unit-inner unit-foot-inner">
                     <div class="misc vcard">
                         <h4><a href="/about">关于</a></h4>
-                        <p>译自 <a href="http://yizeng.me">yizeng.me</a></p><br />
-                        <div class="social-icons">
-                            <a href="/rss.xml" rel="me" target="_blank">
-                                <img title="RSS" src='/assets/images/social/RSS-36.png' alt="曾屹的 rss feeds" height="42" width="42">
-                            </a>
+                        <p>译自 <a href="http://yizeng.me">yizeng.me</a></p>
+                        <div class="social-links">
+                            <a class="ico-linkedin" href="http://linkedin.com/in/{{ site.author.username }}nz/" rel="me" target="_blank" title="LinkedIn Profile"></a>
+                            <a class="ico-github" href="http://github.com/{{ site.author.username }}/" rel="me" target="_blank" title="GitHub Page"></a>
+                            <a class="ico-gmail" href="http://scr.im/{{ site.author.username }}dev/" rel="me" target="_blank" title="Email Address"></a>
+                            <a class="ico-stackoverflow" href="http://stackoverflow.com/users/1177636/user1177636" rel="me" target="_blank" title="StackOverflow Profile"></a>
+                            <a class="ico-rss" href="/rss.xml" rel="me" target="_blank" title="RSS Feeds"></a>
                         </div>
                     </div><!-- misc -->
                     <!--p class="licence"></p-->
@@ -82,100 +116,7 @@
             <a href="#" class="back-to-top">返回顶部</a>
         </footer>
     </div><!-- page -->
-
-    {% if page.js_utils != null %}
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/assets/js/jquery-1.10.2.min.js"><\/script>')</script>
-
-        {% if page.js_utils contains "fancybox" %}
-            <script src="/assets/js/fancybox/jquery.fancybox.pack.js?v=2.1.4"></script>
-            <script src="/assets/js/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-
-            <script type="text/javascript">
-                $("head").append('<link rel="stylesheet" href="/assets/js/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
-                $("head").append('<link rel="stylesheet" href="/assets/js/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
-                $(".post-image").fancybox({
-                    prevEffect      : 'none',
-                    nextEffect      : 'none',
-                    closeBtn        : true,
-                    helpers     : {
-                        title   : { type : 'inside' },
-                        buttons : {}
-                    }
-                });
-            </script>
-        {% endif %}
-
-        {% if page.js_utils contains "unveil" %}
-            <script src="/assets/js/unveil/jquery.unveil.min.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $(".post-image > img").unveil(150);
-                });
-            </script>
-        {% endif %}
-
-        {% if page.js_utils contains "toc" %}
-            <script type="text/javascript">
-                function createListItem(heading) {
-                    var link = "#" + heading.children("a").attr("id");
-                    return "<li>" + "<a href='" + link + "'>" + heading.text() + "</a>" + "</li>";
-                }
-
-                var ToC = "<nav role='navigation' class='toc'><ol>";
-                $("article h2").each(function () {
-                    var secondHeading, thirdHeadingInside;
-
-                    secondHeading = $(this);
-                    ToC += createListItem(secondHeading);
-
-                    thirdHeadingInside = secondHeading.nextUntil("article h2", "h3");
-                    if (thirdHeadingInside.length !== 0) {
-                        ToC += "<ul>";
-                        thirdHeadingInside.each(function () {
-                            ToC += createListItem($(this));
-                        });
-                        ToC += "</ul>";
-                    }
-                });
-                ToC += "</ol>" + "</nav>";
-
-                $("#toc").prepend(ToC);
-            </script>
-        {% endif %}
-
-        {% if page.js_utils contains "toc" or page.js_utils contains "back-to-top" %}
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    var offset = 220, duration = 500;
-                    $(window).scroll(function () {
-                        if ($(window).width() > 960) {
-                            if ($(this).scrollTop() > offset) {
-                                $('.back-to-top').fadeIn(duration);
-                            } else {
-                                $('.back-to-top').fadeOut(duration);
-                            }
-                        }
-                    });
-                    $(window).resize(function () {
-                        if ($(window).width() < 960) {
-                            $('.back-to-top').fadeOut(duration);
-                        }
-                        if ($(window).width() >= 960 && $(this).scrollTop() > offset) {
-                            $('.back-to-top').fadeIn(duration);
-                        }
-                    });
-
-                    $('.back-to-top').click(function (event) {
-                        event.preventDefault();
-                        $('html, body').animate({scrollTop: 0}, duration);
-                        return false;
-                    });
-                });
-            </script>
-        {% endif %}
-    {% endif %}
-
+    {% include themes/the-program/scripts.html %}
     {% include JB/analytics %}
 </body>
 </html>
