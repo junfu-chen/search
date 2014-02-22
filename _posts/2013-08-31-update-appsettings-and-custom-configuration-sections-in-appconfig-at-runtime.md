@@ -13,7 +13,7 @@ js_utils: toc
 
 ## <a id="app-config"></a>App.config 文件
 
-如下为一个 App.config 的文件示例，将被用来讲解如何在运行时更新（添加，修改或删除）App.config 里的 AppSettings 属性及自定义配置节。
+如下为一个 `App.config` 的文件示例，将被用来讲解如何在运行时更新（添加，修改或删除）App.config 里的 AppSettings 属性及自定义配置节。
 
 {% highlight xml %}
 ﻿﻿<?xml version="1.0" encoding="utf-8" ?>

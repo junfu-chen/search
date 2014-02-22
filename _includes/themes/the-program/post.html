@@ -12,7 +12,7 @@
                 <div class="entry-content">
                         <div class="meta">
                             <p class="date-publish">
-                               {{ site.translations.published }} : <time itemprop="datePublished" class="date-pub {% if page.last_updated == null %}updated{% endif %}" title="{{ page.date | date_to_xmlschema }}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B' }} {{ page.date | date: '%d' }}, {{ page.date | date: '%Y' }} </time> by 
+                               {{ site.translations.published }}: <time itemprop="datePublished" class="date-pub {% if page.last_updated == null %}updated{% endif %}" title="{{ page.date | date_to_xmlschema }}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B' }} {{ page.date | date: '%d' }}, {{ page.date | date: '%Y' }} </time> by 
                                 <a class="author" href="/" rel="author">
                                     <span itemprop="author" itemscope itemtype="http://schema.org/Person">
                                         <span itemprop="name">
@@ -66,12 +66,6 @@
                 </div>
             </footer>
             <div class="misc-content">
-                <div class="social">
-                    <ul class="list-linear">
-                        <!--<li><div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="{{ site.author.twitter }}" data-lang="en">Tweet</a></div></li>-->
-                        <!--<li><div class="twitter-follow"><a href="https://twitter.com/{{ site.author.twitter }}" class="twitter-follow-button" data-show-count="false" data-lang="en"></a></div></li>-->
-                    </ul>
-                </div>
                 <div class="comment">{% include JB/comments %}</div>
             </div><!-- misc-content -->
         </div><!-- content -->
