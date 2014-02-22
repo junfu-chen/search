@@ -123,3 +123,47 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
+
+# All translation keys
+translations:
+  # post_collate
+  last_updated: '最后更新于'
+
+  # <head>
+  keywords: '曾屹,软件,工程师,测试,基督城,新西兰'
+
+  # site notices
+  old_ie_notice: '您正在使用过时的浏览器。请<a href="http://browsehappy.com/" target="_blank">升级</a>或<a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">开启 Google Chrome Frame</a> 来提升使用体验。'
+  js_notice: '本站某些功能需要 JavaScript 支持。请参阅此网站教程来<a href="http://www.enable-javascript.com/" target="_blank">开启浏览器的 JavaScript 功能</a>。'
+
+  # search
+  search_placeholder: '搜索...'
+  search_results: '搜索结果'
+  search_no_found: '什么也没找到 :('
+  close: '关闭'
+
+  # navigation
+  articles: '文章列表'
+  notes: '笔记列表'
+  categories: '文章分类'
+  tags: '文章标签'
+  search: '文章搜索'
+
+  # the-footer
+  about: '关于'
+  show_details: false
+  job_title: 'software developer and test automator'
+  based_in: ' based in '
+  city: 'Christchurch'
+  country: 'New Zealand'
+  extra_info: '译自 <a href="http://yizeng.me">yizeng.me</a>'
+  back_to_top: '返回顶部'
+
+  # post.html
+  published: '发表于'
+  cc_license: 'http://creativecommons.org/licenses/by-sa/3.0/deed.zh'
+  view: '阅读'
+
+  # 404.html
+  404_heading: '对不起，无法找到该页。'
+  404_content: '页面将在数秒内自动跳转回 <a href="http://yizeng.me">cn.yizeng.me</a>'
