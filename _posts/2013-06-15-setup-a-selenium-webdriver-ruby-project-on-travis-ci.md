@@ -96,7 +96,7 @@ Travis CI 使用在项目根目录下的 `.travis.yml` 来了解项目配置，�
 详细的官方文档可以[在这里](http://about.travis-ci.org/docs/user/languages/ruby/)被查阅。
 想要验证配置文件，[Travis Lint](http://about.travis-ci.org/docs/user/travis-lint/) 会是一个非常方便的工具，不过最简单的方法是前往 [Travis WebLint](http://lint.travis-ci.org/) 页面，直接粘贴进配置文件内容。
 
-{% highlight yaml %}
+{% prettify yaml %}
 # 示例 .travis.yml 文件:
 language: ruby
 
@@ -109,7 +109,7 @@ before_install:
   - gem update # 可选，更新所有的 gems
   - gem install selenium-webdriver
   - phantomjs --version # 输出 phantomjs 版本
-{% endhighlight %}
+{% endprettify %}
 
 ## <a id="push-to-github"></a>上传至 Github
 一旦代码仓库已正确设立了，就可以上传至 Github。

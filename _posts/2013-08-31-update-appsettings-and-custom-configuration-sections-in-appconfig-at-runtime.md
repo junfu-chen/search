@@ -42,39 +42,39 @@ utilities: highlight, toc
 
 ### <a id="add-in-appsettings"></a>添加一个元素
 
-{% highlight c# %}
+{% prettify c# %}
 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 config.AppSettings.Settings.Add("OS", "Linux");
 config.Save(ConfigurationSaveMode.Modified);
 
 ConfigurationManager.RefreshSection("appSettings");
-{% endhighlight %}
+{% endprettify %}
 
 ### <a id="edit-in-appsettings"></a>修改已有元素的键值
 
-{% highlight c# %}
+{% prettify c# %}
 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 config.AppSettings.Settings["Version"].Value = "2.0.0";
 config.Save(ConfigurationSaveMode.Modified);
 
 ConfigurationManager.RefreshSection("appSettings");
-{% endhighlight %}
+{% endprettify %}
 
 ### <a id="remove-in-appsettings"></a>删除已有的元素
 
-{% highlight c# %}
+{% prettify c# %}
 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 config.AppSettings.Settings.Remove("Version");
 config.Save(ConfigurationSaveMode.Modified);
 
 ConfigurationManager.RefreshSection("appSettings");
-{% endhighlight %}
+{% endprettify %}
 
 ## <a id="update-custom-section"></a>更新自定义配置节
 
 ### <a id="add-in-custom-section"></a>添加一个元素
 
-{% highlight c# %}
+{% prettify c# %}
 XmlDocument xmlDoc = new XmlDocument();
 xmlDoc.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
 
@@ -86,11 +86,11 @@ xmlDoc.SelectSingleNode("//geoSettings/summary").AppendChild(nodeRegion);
 
 xmlDoc.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
 ConfigurationManager.RefreshSection("geoSettings/summary");
-{% endhighlight %}
+{% endprettify %}
 
 ### <a id="edit-in-custom-section"></a>修改已有元素的键值
 
-{% highlight c# %}
+{% prettify c# %}
 XmlDocument xmlDoc = new XmlDocument();
 xmlDoc.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
 
@@ -98,11 +98,11 @@ xmlDoc.SelectSingleNode("//geoSettings/summary/add[@key='Country']").Attributes[
 
 xmlDoc.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
 ConfigurationManager.RefreshSection("geoSettings/summary");
-{% endhighlight %}
+{% endprettify %}
 
 ### <a id="remove-in-custom-section"></a>删除已有的元素
 
-{% highlight c# %}
+{% prettify c# %}
 XmlDocument xmlDoc = new XmlDocument();
 xmlDoc.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
 
@@ -111,11 +111,11 @@ nodeCity.ParentNode.RemoveChild(nodeCity);
 
 xmlDoc.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
 ConfigurationManager.RefreshSection("geoSettings/summary");
-{% endhighlight %}
+{% endprettify %}
 
 ## <a id="print-out-keys"></a>输出全部元素
 
-{% highlight c# %}
+{% prettify c# %}
 NameValueCollection settings = ConfigurationManager.AppSettings;
 // var settings = ConfigurationManager.GetSection("geoSettings/summary") as NameValueCollection;
 
@@ -123,7 +123,7 @@ foreach (string key in appSettings.AllKeys) {
 	Console.WriteLine("{0}: {1}", key, section[key]);
 }
 Console.WriteLine();
-{% endhighlight %}
+{% endprettify %}
 
 ## <a id="references"></a>参考文献
 
