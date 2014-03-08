@@ -11,4 +11,4 @@
 - [MIT 许可证](https://raw.github.com/yizeng/yizeng.me/develop/LICENSE) - 所有原创代码
 
 ## 鸣谢
-请参阅 [Acknowledgements](https://github.com/yizeng/yizeng.me/wiki/Acknowledgements) wiki page.
+请参阅 [Acknowledgements](https://github.com/yizeng/yizeng.me/wiki/Acknowledgements) wiki 页面.
