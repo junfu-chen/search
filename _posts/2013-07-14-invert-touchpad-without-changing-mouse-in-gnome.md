@@ -5,7 +5,7 @@ description: "如何在 Linux Mint 15 Cinnamon 中反转触摸板至左撇子键
 category: articles
 tags: [linux mint]
 alias: [/2013/07/14/]
-js_utils: fancybox, toc, unveil
+utilities: fancybox, toc, unveil
 ---
 {% include JB/setup %}
 

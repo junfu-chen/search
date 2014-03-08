@@ -5,7 +5,7 @@ description: "如何在运行时更新（添加，修改或删除）App.config �
 category: articles
 tags: [c#, .net]
 alias: [/2013/08/31/]
-js_utils: toc
+utilities: highlight, toc
 ---
 {% include JB/setup %}
 

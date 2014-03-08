@@ -4,12 +4,11 @@
 
 ## 关于本站
 
-请参阅[关于本站](http://cn.yizeng.me/about)页面。
+请参阅[关于本站](https://github.com/yizeng/cn.yizeng.me)页面。
 
 ## 许可证
-所有文章皆以[署名-相同方式共享 3.0 未本地化版本 (CC BY-SA 3.0)](http://creativecommons.org/licenses/by-sa/3.0/deed.zh)发表。
-
-所有原创代码均使用 [MIT 许可证](https://raw.github.com/yizeng/yizeng.me/develop/LICENSE)。
+- [署名-相同方式共享 3.0 未本地化版本 (CC BY-SA 3.0)](http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB) - 所有文章
+- [MIT 许可证](https://raw.github.com/yizeng/yizeng.me/develop/LICENSE) - 所有原创代码
 
 ## 鸣谢
-请参阅 [cn.yizeng.me/about](http://cn.yizeng.me/about/) 页面。
+请参阅 [Acknowledgements](https://github.com/yizeng/yizeng.me/wiki/Acknowledgements) wiki page.

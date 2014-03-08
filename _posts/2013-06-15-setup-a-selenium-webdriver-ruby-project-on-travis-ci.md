@@ -5,7 +5,7 @@ description: "如何在 Travis CI 上创建一个使用 headless PhantomJS 浏�
 category: articles
 tags: [github, phantomjs, ruby, selenium, travis-ci, webdriver]
 alias: [/2013/06/15/]
-js_utils: fancybox, toc, unveil
+utilities: fancybox, highlight, toc, unveil
 ---
 {% include JB/setup %}
 

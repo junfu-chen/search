@@ -5,7 +5,7 @@ description: "如何给保存在 GitHub Pages 上的网站创建自定义的404�
 category: articles
 tags: [jekyll, github]
 alias: [/2013/05/26/]
-js_utils: toc
+utilities: highlight, toc
 ---
 {% include JB/setup %}
 

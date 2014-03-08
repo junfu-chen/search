@@ -151,6 +151,10 @@ translations:
 
   # the-footer
   about: '关于'
+  license: '许可证'
+  license_link: 'https://github.com/yizeng/cn.yizeng.me#%E8%AE%B8%E5%8F%AF%E8%AF%81'
+  acknowledgements: '鸣谢'
+  acknowledgements_link: 'https://github.com/yizeng/yizeng.me/wiki/Acknowledgements'
   show_details: false
   job_title: 'software developer and test automator'
   based_in: ' based in '

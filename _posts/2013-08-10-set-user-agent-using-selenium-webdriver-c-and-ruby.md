@@ -6,7 +6,7 @@ category: articles
 tags: [c#, phantomjs, ruby, webdriver, selenium]
 alias: [/2013/08/10/]
 last_updated: January 08, 2014
-js_utils: toc
+utilities: highlight, toc
 ---
 {% include JB/setup %}
 

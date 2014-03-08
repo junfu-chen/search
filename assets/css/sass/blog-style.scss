@@ -2,6 +2,23 @@
 @import "compass/css3/user-interface";
 @import "compass/typography";
 
+@import "./support/normalize";
+@import "./support/helper";
+
+$fonts-header: 'Nova Square', Verdana, Tahoma, monospace;
+$fonts-body: 'Exo 2', consolas, Monaco, monospace;
+$fonts-code: 'Lucida Console', Consolas, monospace, 'DejaVu Sans Mono', serif;
+
+$color-text: #2D2D2D;
+$color-hover: #FF9900;
+$color-hover-transparent: rgba(255, 153, 0, 0.7);
+$color-meta-link-hover: #797979;
+
+$color-box-border: #DDDDDD;
+$color-code-background: #272822;
+$color-inline-code-background: #DDDDDD;
+$color-linenos-background: #4B4B4B;
+
 ::-webkit-scrollbar {
 	width: 12px;
 }
@@ -19,7 +36,7 @@
 body {
 	font-family: $fonts-body;
 	font-size: 1em;
-	line-height: 1.525em;
+	line-height: 1.625em;
 }
 h1,
 .the-header .logo,
@@ -58,8 +75,7 @@ ul,
 ol,
 dl,
 img {
-	margin-top: 0;
-	margin-bottom: 0.5em;
+	margin-top: 0
 }
 small,
 .small,
@@ -107,18 +123,12 @@ html {
 .body .unit-body {
 	@include box-shadow($color-box-border 0 0 9px);
 	border-top: 1px solid rgba(255, 255, 255, 0.6);
-	padding: 26px;
-	padding-top: 13px;
-	padding-left: 36px;
+	padding: 13px 26px 26px 36px;
 	background: #FFF;
 }
 /* LINK */
-a:link {
-	text-decoration: none
-}
-a:visited {
-	text-decoration: none
-}
+a:link,
+a:visited,
 a:hover {
 	text-decoration: none
 }
@@ -128,8 +138,8 @@ code,
 kbd,
 samp {
 	font-family: $fonts-code;
-	line-height: 18px !important;
-	font-size: .9em !important;
+	line-height: 20px !important;
+	font-size: .95em !important;
 }
 pre {
 	@include box-shadow(inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.6));
@@ -139,7 +149,7 @@ pre {
 	background-color: $color-code-background;
 	margin-left: 0;
 	margin-right: 0;
-	padding: 1.625em;
+	padding: 1.625em !important;
 	overflow: auto;
 
 	code {
@@ -149,8 +159,8 @@ pre {
 
 .linenos pre {
 	background-color: $color-linenos-background;
-	padding-left: 0.625em;
-	padding-right: 0.625em;
+	padding-left: 0.625em !important;
+	padding-right: 0.625em !important;
 	overflow: visible;
 }
 .line-numbers,
@@ -180,7 +190,14 @@ pre::-webkit-scrollbar-thumb:horizontal,
 	background-color:#6D705F;
 }
 
-@import "./main/header";
-@import "./main/unit-article";
-@import "./main/data-table";
-@import "./main/footer";
+@import "./blog/header";
+@import "./blog/unit-article";
+@import "./blog/data-table";
+@import "./blog/footer";
+@import "./blog/search";
+@import "./blog/responsive";
+
+@import "./support/fonts";
+@import "./support/social-links";
+@import "./support/gist";
+@import "./support/pace";

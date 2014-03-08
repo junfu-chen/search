@@ -1,13 +1,18 @@
 .data-table {
 	overflow: auto;
 
-	table{
+	table {
 		background-color: #EEEEEE;
 		border-collapse: separate;
 		border: 5px solid $color-box-border;
 
+		&:hover {
+			@include transition(all .3s ease-in-out);
+			border-color: $color-hover;
+		}
+
 		td, th {
-			border-color: rgba(255, 255, 255, 0.5);
+			border: 1px solid rgba(175, 175, 175, 0.5);
 			padding: 3px;
 		}
 
@@ -24,11 +29,6 @@
 		.center {
 			text-align: center;
 		}
-	}
-
-	table:hover {
-		@include transition(all .3s ease-in-out);
-		border-color: $color-hover;
 	}
 }
 
