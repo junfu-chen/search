@@ -5,18 +5,17 @@ description: "如何在 Windows 上安装 Jekyll"
 category: articles
 tags: [jekyll, ruby]
 alias: [/2013/05/10/]
+last_updated: March 09, 2014
 utilities: fancybox, toc, unveil
 ---
-{% include JB/setup %}
-
-> 原文已于2013年9月10日更新，请点击[本链接](http://yizeng.me/2013/05/10/setup-jekyll-on-windows/)查看最新版本
-
 <div id="toc"></div>
 
 ## <a id="install-ruby"></a>安装 Ruby
 
 1. 前往 <http://rubyinstaller.org/downloads/>
-2. 下载 `rubyinstaller-2.0.0-p0-x64.exe`
+2. 在 "RubyInstallers" 部分，选择某个版本点击下载。
+<br />例如， `Ruby 2.0.0-p451 (x64)` 适于64位 Windows 机器上的
+Ruby 2.0.0 x64 安装包。
 3. 通过安装包安装
 	- 最好保持默认的路径 C:\Ruby200-x64，因为安装包明确提出 “请不要使用带有空格的文件夹 (如： Program Files)”。
 	- 勾选 "Add Ruby executables to your PATH"
@@ -28,17 +27,24 @@ utilities: fancybox, toc, unveil
 > ruby --version
 
 ## <a id="install-devkit"></a>安装 DevKit
-[Github 上完整的安装教程](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit#installation-instructions)
 
-1. 前往 <http://rubyinstaller.org/downloads/>
-2. 下载 DevKit 安装包 `DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe`
-3. 运行安装包并解压缩至某文件夹，如 `C:\DevKit`
-4. 通过初始化来创建 config.yml
+1. 完整的[官方安装教程](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit#installation-instructions)可在 Github 上阅读。
+2. 前往 <http://rubyinstaller.org/downloads/>
+3. 下载同系统及 Ruby 版本相对应的 DevKit 安装包。
+例如，`DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe` 适用于64位 Windows 系统上的 Ruby 2.0.0 x64。
+<br />下面列出了如何选择正确的 DevKit 版本：
+
+    > **Ruby 1.8.6 to 1.9.3**: DevKit tdm-32-4.5.2<br />
+    > **Ruby 2.0.0**: DevKit mingw64-32-4.7.2<br />
+    > **Ruby 2.0.0 x64**: DevKit mingw64-64-4.7.2<br />
+
+4. 运行安装包并解压缩至某文件夹，如 `C:\DevKit`
+5. 通过初始化来创建 config.yml 文件。在命令行窗口内，输入下列命令：
 > cd "C:\DevKit"<br />
 > ruby dk.rb init<br />
 > notepad config.yml<br />
-5. 在打开的记事本窗口中，于末尾添加新的一行 `- C:\Ruby200-x64`，保存文件并退出。
-6. 在命令行窗口内，审查并安装
+6. 在打开的记事本窗口中，于末尾添加新的一行 `- C:\Ruby200-x64`，保存文件并退出。
+7. 回到命令行窗口内，审查（非必须）并安装
 > ruby dk.rb review<br />
 > ruby dk.rb install
 
@@ -50,11 +56,21 @@ utilities: fancybox, toc, unveil
 
 ## <a id="install-pygements"></a>安装 Pygments
 
+Pygments 是 Jekyll 使用的语法高亮插件。
+若想使用 Pygments 来高亮代码段，
+首先需要安装 Python，并在网站配置文件 `_config.yml` 里将 `highlighter` 的值设置为 `pygments`。
+
+不久之前，Jekyll 添加了另一个 Ruby 原生的高亮引擎 [Rouge](https://github.com/jayferd/rouge)，
+尽管不能支持和 Pygments 一样数量的语言，但它是不需要 Python 的。
+更多信息可以在[官方文档](http://jekyllrb.com/docs/templates/#code_snippet_highlighting)内查阅。
+
 ### <a id="install-python"></a>安装 Python
 1. 前往 <http://www.python.org/download/>
-2. 下载 Python windows 安装包 `Python 2.7.4 Windows Installer`
-3. 添加安装路径 (如： `C:\Python27`) 至 PATH
-4. 检验 Python 安装是否成功
+2. 下载 Python windows 安装包 `Python 2.7.6 Windows Installer`。
+请注意，Python 2 可能会更合适，因为暂时 Python 3 可能不会正常工作。
+3. 安装
+4. 添加安装路径 (如： `C:\Python27`) 至 PATH
+5. 检验 Python 安装是否成功
 > python --version
 
 ### <a id="install-easy-install"></a>安装 'Easy Install'
@@ -68,15 +84,59 @@ utilities: fancybox, toc, unveil
 2. 安装 Pygments
 > easy_install Pygments
 
+## <a id="start-jekyll"></a>启动 Jekyll
+按照官方的 [Jekyll 快速开始手册][Jekyll 快速开始手册]的步骤，
+一个新的 Jekyll 博客可以被建立并在 [localhost:4000](http://localhost:4000) 浏览。
+> jekyll new myblog<br />
+> cd myblog<br />
+> jekyll serve<br />
+
 ### <a id="troubleshooting"></a>故障诊断
-1. 错误:
+1. 错误信息：
+
+        “python” is not recognized as an internal or external command, operable program or batch file.
+
+    **其他情况**: 这里的 "python" 也可能是 "ruby"， "gem" 或是 "easy_install" 等。
+
+    **可能原因**: 该程序可能未被正确地在 PATH 里设置。
+
+    **可能解法**: 将该程序手动添加至 PATH，详细请查看如下步骤 （[来源](http://stackoverflow.com/a/6318188/1177636)）。
+    > 1. 按住 Win 键再按下 Pause。
+    > 2. 点击 Advanced System Settings.
+    > 3. 点击 Environment Variables.
+    > 4. 将 `;C:\python27` 添加至 Path 变量的末尾。
+    > 5. 重启命令行
+
+2. 错误信息：
+
+        ERROR:  Error installing jekyll:
+                ERROR: Failed to build gem native extension.
+
+        "C:/Program Files/Ruby/Ruby200-x64/bin/ruby.exe" extconf.rb
+
+        creating Makefile
+        make generating stemmer-x64-mingw32.def
+        compiling porter.c
+        ...
+        make install
+        /usr/bin/install -c -m 0755 stemmer.so C:/Program Files/Ruby/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fast-stemmer-1.0.2/li
+         
+        /usr/bin/install: target `Files/Ruby/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fast-stemmer-1.0.2/lib' is not a directory
+        make: *** [install-so] Error 1
+
+    **可能原因**: Ruby 被安装在含有空格的路径里。
+
+    **可能解法**: 重新安装 Ruby，这次请不要使用带有空格的路径，或者请直接选择使用默认路径。
+
+3. 错误信息：
 
 		Generating...   Liquid Exception: No such file or directory - python c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/pygments.rb-0.4.2/lib/pygments/mentos.py in 2013-04-22-hello-world.md
 
-    **可能原因:** PATH 的添加啊还未生效
+    **可能原因**: PATH 的添加啊还未生效
 
-    **尝试解法:** 注销系统并重新登录<br />
-2. 错误:
+    **可能解法**: 首先请确保 PATH 内没有多余的空格或斜杠。然后请尝试重启命令行。如依旧不工作，请注销系统并重新登录，甚或重启系统。<br />
+
+4. 错误信息：
 
 		c:/Ruby200-x64/lib/ruby/2.0.0/rubygems/dependency.rb:296:in `to_specs': Could not find 'pygments.rb' (~> 0.4.2) - did find: [pygments.rb-0.5.0] (Gem::LoadError)
 		from c:/Ruby200-x64/lib/ruby/2.0.0/rubygems/specification.rb:1196:in `block in activate_dependencies'
@@ -86,5 +146,23 @@ utilities: fancybox, toc, unveil
 		from c:/Ruby200-x64/lib/ruby/2.0.0/rubygems/core_ext/kernel_gem.rb:48:in`gem'
 		from c:/Ruby200-x64/bin/jekyll:22:in `<main>'`
 
-   **尝试解法:** 安装 gem pygments.rb 的旧版本 0.4.2
-> gem install pygments.rb -v 0.4.2
+    **可能原因**: 如错误信息所述，找不到 pygments.rb 0.4.2，仅找到 pygments.rb 0.5.0。
+    （此问题出现于此文初稿时的 Jekyll 版本，现版本应已修复。）
+
+    **可能解法**: 卸载现有版本 0.5.0，重新安装 gem pygments.rb 的旧版本 0.4.2
+    > gem uninstall pygments.rb --version “=0.5.0”<br />
+    > gem install pygments.rb --version “=0.4.2”
+
+5. 错误信息：
+
+        Destination: d:/yizeng.me/_site
+        Generating... c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/posix-spawn-0.3.6/lib/posix/spawn.rb:162: warning: cannot close fd before spawn
+        Liquid Exception: No such file or directory - /bin/sh in _posts/2013-04-22-hello-world.md
+
+    **可能原因**: 与 pygments.rb 0.5.0 级以上版本的兼容性问题
+
+    **可能解法**: 从 pygments.rb 0.5.2/0.5.1 版本回滚到 0.5.0
+    > gem uninstall pygments.rb --version "=0.5.2"<br />
+    > gem install pygments.rb --version "=0.5.0"
+
+[Jekyll 快速开始手册]: http://jekyllrb.com/docs/quickstart/
