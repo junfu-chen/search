@@ -13,7 +13,7 @@ module Jekyll
       end
 
       def render(context)
-        "<sup><a href=\"#footnote-#{@num}\">[#{@num}]</a></sup>"
+        "<sup><a id=\"footnote-ref-#{@num}\" href=\"#footnote-#{@num}\">[#{@num}]</a></sup>"
       end
     end
   end

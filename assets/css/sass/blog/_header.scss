@@ -16,7 +16,7 @@
 
 	.nav-global .logo {
 		display: block;
-		font-family: $fonts-titling;
+		font-family: $fonts-heading;
 		font-weight: bold;
 		margin: 0;
 		width: auto;
@@ -33,12 +33,21 @@
 			}
 		}
 
-		.btn-search {
-			background: url('/assets/images/btn-search.png') no-repeat;
+		button {
 			border: none;
 			display: none;
 			height: 24px;
 			width: 24px;
+		}
+
+		.btn-menu {
+			background: url('/assets/images/btn-menu.png') no-repeat;
+			float: left;
+		}
+
+		.btn-search {
+			background: url('/assets/images/btn-search.png') no-repeat;
+			float: right;
 		}
 	}
 

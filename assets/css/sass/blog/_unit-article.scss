@@ -17,8 +17,15 @@
 }
 
 .unit-article {
+	iframe {
+		display: block;
+		height: 250px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+	}
+
 	a {
-		@include border-radius(2px);
 		@include link-colors(#0077CC, $visited:#4A6B82, $hover:$color-text);
 		font-size: .95em;
 		padding: 1px 2px;
@@ -39,6 +46,39 @@
 		a {
 			padding: 0px
 		}
+	}
+
+	.show-hidden,
+	.button,
+	button {
+		@include background-clip(padding-box);
+		@include transition(all .3s ease-in-out);
+		background: transparent;
+		border: 2px solid $color-text;
+		color: $color-text;
+		cursor: pointer;
+		display: inline-block;
+		line-height: 1.45em;
+		margin-left: 8px;
+		padding: 2px 24px;
+		outline: 0;
+		text-align: center;
+		text-decoration: none;
+		text-shadow: none;
+		vertical-align: inherit;
+		white-space: nowrap;
+
+		&:hover {
+			background-color: #FFF;
+			border-color: $color-hover;
+			color: $color-hover;
+		}
+	}
+
+	.center-block {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.meta {
@@ -63,7 +103,7 @@
 		@include link-colors($color-text, $hover:$color-text);
 		font-size: 1em;
 		border-bottom: none;
-		line-height: 1.825em;
+		line-height: 1.875em;
 	}
 
 	.image-link {
@@ -82,15 +122,35 @@
 	}
 
 	blockquote {
-		@include border-radius(5px);
-		background-color: #EEEEEE;
+		background-color: $color-inline-code-background;
 		border-left: .7em solid $color-box-border;
 		margin: 1em 16px;
 		padding-left: 1em;
+		overflow: auto;
 
 		p {
-			margin-left: 0;
-			margin-right: 0;
+			margin: 12px 0
+		}
+
+		&::-webkit-scrollbar {
+			@include border-radius(5px);
+			height:8px;
+			background-color: $color-inline-code-background;
+		}
+
+		&::-webkit-scrollbar-track {
+			@include border-radius(5px);
+			background-color: $color-box-border;
+		}
+
+		&::-webkit-scrollbar-thumb:horizontal {
+			@include border-radius(5px);
+			background-color: #B1B699;
+		}
+
+		ol,
+		ul {
+			margin-bottom: 0
 		}
 	}
 
@@ -101,9 +161,11 @@
 	}
 
 	.toc {
-		border: 5px solid $color-box-border;
+		border: 5px solid $color-inline-code-background;
 		display: inline-block;
-		margin-top: 26px;
+		margin-top: 18px;
+		margin-bottom: 0;
+		min-width: 175px;
 		padding: 7px;
 		text-align: left;
 
@@ -111,14 +173,14 @@
 			@include transition(all .1s ease-in-out);
 			border-color: $color-hover;
 		}
-	}
 
-	.toc ol,
-	.toc ul,
-	.toc li {
-		margin-left: 1em;
-		margin-bottom: 0em;
-		padding-left: 0;
+		ol,
+		ul,
+		li {
+			margin-left: 1em;
+			margin-bottom: 0em;
+			padding-left: 0;
+		}
 	}
 
 	ul {
@@ -173,17 +235,17 @@
 		margin-right: 0;
 	}
 
+	pre.prettyprint,
+	.highlight pre {
+		padding-left: 2em !important
+	}
+
 	p > code,
 	li > code {
-		@include border-radius(5px);
 		background-color: $color-inline-code-background;
 		font-family: $fonts-body;
 		padding: 2px 3px;
 		white-space: nowrap;
-	}
-	li pre code {
-		background-color: $color-code-background;
-		white-space: pre-wrap;
 	}
 
 	img {
@@ -226,7 +288,8 @@
 	}
 
 	.list-linear .list-head {
-		margin-right: 10px
+		margin-right: 10px;
+		padding-right: 4px;
 	}
 	.list-category a,
 	.list-tag a {
@@ -253,11 +316,7 @@
 		vertical-align: middle;
 	}
 	.list-category {
-		margin-bottom: 0;
-		text-transform: capitalize;
-	}
-	.list-tag {
-		text-transform: capitalize
+		margin-bottom: 0
 	}
 
 	.comment a {
@@ -269,6 +328,11 @@
 
 		a {
 			padding: 1px
+		}
+
+		.reverse-footnote {
+			border: none;
+			cursor: pointer;
 		}
 	}
 }
@@ -320,30 +384,6 @@
 	a.license {
 		float: right;
 		border-bottom: none;
-	}
-
-	.button,
-	button {
-		@include background-clip(padding-box);
-		@include transition(all .3s ease-in-out);
-		background: transparent;
-		border: 2px solid $color-text;
-		color: $color-text;
-		cursor: pointer;
-		display: inline-block;
-		padding: 2px 20px;
-		outline: 0;
-		text-align: center;
-		text-decoration: none;
-		text-shadow: none;
-		vertical-align: inherit;
-		white-space: nowrap;
-
-		&:hover {
-			background-color: #FFF;
-			border-color: $color-hover;
-			color: $color-hover;
-		}
 	}
 
 	.mce-btn > button {
@@ -408,7 +448,7 @@
 	@include background-clip(padding-box);
 	@include box-shadow(inset 0 3px 3px rgba(0, 0, 0, 0.4), 0 3px 0 rgba(255, 255, 255, 0.4));
 
-	background: url('/assets/images/skin/noisy_texture_F0F0F0.png') repeat #F0F0F0;
+	background: url('/assets/images/skin/noisy_texture_section0-200x200.png') repeat #F0F0F0;
 	list-style: none;
 	padding: 0.8125em;
 
@@ -420,7 +460,6 @@
 
 	a {
 		@include background-clip(padding-box);
-		@include border-radius(0px);
 		@include user-select(none);
 		@include transition-duration(0.2s);
 

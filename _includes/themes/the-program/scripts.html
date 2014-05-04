@@ -1,11 +1,44 @@
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/assets/js/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/jquery-1.11.0.min.js"><\/script>')</script>
 
 <!-- Loading progess bar plugin -->
 <!--[if !IE]> -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/pace/0.4.17/pace.min.js"></script>
 	<script>window.Pace || document.write('<script src="/assets/js/pace.min.js"><\/script>')</script>
 <!-- <![endif]-->
+
+<script>
+	$(document).ready(function () {
+		var offset = 50, duration = 500, width = 1350;
+		$(window).scroll(function () {
+			if ($(window).width() > width) {
+				if ($(this).scrollTop() > offset) {
+					$('footer').css('top', '20px');
+					$('footer .back-to-top').fadeIn(duration);
+				} else {
+					$('footer').css('top', 'auto');
+					$('footer .back-to-top').fadeOut(duration);
+				}
+			}
+		});
+		$(window).resize(function () {
+			if ($(window).width() < width) {
+				$('footer').css('top', 'auto');
+				$('footer .back-to-top').fadeOut(duration);
+			}
+			if ($(window).width() >= width && $(this).scrollTop() > offset) {
+				$('footer').css('top', '20px');
+				$('footer .back-to-top').fadeIn(duration);
+			}
+		});
+
+		$('footer .back-to-top').click(function (event) {
+			event.preventDefault();
+			$('html, body').animate({scrollTop: 0}, duration);
+			return false;
+		});
+	});
+</script>
 
 <!-- Google Analytics Event tracking -->
 <script>
@@ -17,45 +50,60 @@ var sendGaEvent = function(category, action, label) {
 	}
 };
 
-$('.the-header .nav-link').on('click', function() {
-	sendGaEvent('Navigation Links', 'Click', this.textContent);
-});
-$('.the-footer .about a').on('click', function() {
-	sendGaEvent('Footer Links', 'Click', this.textContent);
-});
-$('.the-footer .social-links > a').on('click', function() {
-	sendGaEvent('Social Links', 'Click', this.title);
-});
-$('.tag_box.categories a').on('click', function() {
-	sendGaEvent('Categories', 'Click', this.title);
-});
-$('.tag_box.tags a').on('click', function() {
-	sendGaEvent('Tags', 'Click', this.title);
-});
-$('a.internal').on('click', function() {
-	label = (this.getAttribute('data-ga') !== null) ? this.getAttribute('data-ga') : this.textContent;
-	sendGaEvent('Internal Links', 'Click', label);
-});
-$('.unit-article .meta .author').on('click', function() {
-	sendGaEvent('Post meta Links', 'Click', 'Author');
-});
-$('.unit-article .meta .license').on('click', function() {
-	sendGaEvent('Post meta Links', 'Click', 'License');
-});
-$('.unit-article .meta .list-linear a').on('click', function() {
-	if (this.getAttribute('data-ga') !== null){
-		sendGaEvent('Post meta Links', 'Click', this.getAttribute('data-ga'));
-	}
+$(document).ready(function () {
+	$('.the-header .nav-link a').on('click', function() {
+		label = (this.getAttribute('data-ga') !== null) ? this.getAttribute('data-ga') : this.textContent;
+		sendGaEvent('Internal Links', 'Click', label);
+	});
+	$('.the-header .nav-link button').on('click', function() {
+		sendGaEvent('Navigation Buttons', 'Click', this.getAttribute('data-ga'));
+	});
+
+	$('[class$=wrapper] .results a').on('click', function() {
+		sendGaEvent('Overlay Links', 'Click', this.textContent);
+	});
+
+	$('.the-footer .about a').on('click', function() {
+		sendGaEvent('Footer Links', 'Click', this.textContent);
+	});
+	$('.the-footer .social-links > a').on('click', function() {
+		sendGaEvent('Social Links', 'Click', this.title);
+	});
+
+	$('.tag_box.categories a').on('click', function() {
+		sendGaEvent('Categories', 'Click', this.title);
+	});
+	$('.tag_box.tags a').on('click', function() {
+		sendGaEvent('Tags', 'Click', this.title);
+	});
+
+	$('a.internal, .unit-article .comment .show-hidden').on('click', function() {
+		label = (this.getAttribute('data-ga') !== null) ? this.getAttribute('data-ga') : this.textContent;
+		sendGaEvent('Internal Links', 'Click', label);
+	});
+
+	$('.unit-article .meta .author').on('click', function() {
+		sendGaEvent('Post meta Links', 'Click', 'Author');
+	});
+	$('.unit-article .meta .license').on('click', function() {
+		sendGaEvent('Post meta Links', 'Click', 'License');
+	});
+	$('.unit-article .meta .list-linear a').on('click', function() {
+		if (this.getAttribute('data-ga') !== null){
+			sendGaEvent('Post meta Links', 'Click', this.getAttribute('data-ga'));
+		}
+	});
 });
 </script>
 
-<!-- Jekyll Simple Search option -->
+<!-- Show menu overlay + Jekyll Simple Search option -->
 <script src="/assets/js/jekyll-search.jquery.js"></script>
 <script>
 	$(document).ready(function() {
 		$('.search-field').simpleJekyllSearch({
 			jsonFile : '{{ site.url }}/search.json',
 			template : '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+			searchResults: '.search-wrapper .results',
 			searchResultsTitle : '<h4>{{ site.translations.search_results }}</h4>',
 			noResults : '<p>{{ site.translations.search_not_found }}</p>'
 		});
@@ -63,20 +111,26 @@ $('.unit-article .meta .list-linear a').on('click', function() {
 
 	(function($, window, undefined) {
 		var closeOverlay = function() {
-			$('.search-wrapper').removeAttr('style');
-			$(".search-form").toggleClass('active');
-			$("body").removeClass('search-overlay');
+			$('.nav-wrapper, .search-wrapper').removeAttr('style');
+			$(".nav-form, .search-form").removeClass('active');
+			$("body").removeClass('nav-overlay search-overlay');
 		};
 
 		$('.nav-global .btn-search').on('click', function() {
 			$('.search-wrapper').css({ display: "block" });
-			$(".search-form").toggleClass('active');
+			$(".search-form").addClass('active');
 			$(".search-form").find('input').focus();
-			$("body").toggleClass('search-overlay');
-			sendGaEvent('Navigation Links', 'Click', 'Search');
+			$("body").addClass('search-overlay');
 		});
 
-		$('.search-wrapper .btn-close').on('click', function() {
+		$('.nav-global .btn-menu').on('click', function() {
+			$('.nav-wrapper').css({ display: "block" });
+			$(".nav-form").addClass('active');
+			$(".nav-form .search-field").prop('disabled', true);
+			$("body").addClass('nav-overlay');
+		});
+
+		$('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function() {
 			closeOverlay();
 		});
 
@@ -121,8 +175,7 @@ $('.unit-article .meta .list-linear a').on('click', function() {
 				nextEffect : 'none',
 				closeBtn : true,
 				helpers : {
-					title : { type : 'inside' },
-					buttons : {}
+					title : { type : 'float' }
 				}
 			});
 		</script>
@@ -136,64 +189,39 @@ $('.unit-article .meta .list-linear a').on('click', function() {
 			});
 		</script>
 	{% endif %}
+{% endif %}
 
-	{% if page.utilities contains "toc" %}
-		<script>
-			function createListItem(heading) {
-				var link = "#" + heading.children("a").attr("id");
-				return "<li>" + "<a href='" + link + "'>" + heading.text() + "</a>" + "</li>";
+{% if page.categories != nil %}
+<script>
+$(document).ready(function () {
+	var disqusPublicKey = "{{ site.JB.comments.disqus.public_key }}";
+	var disqusShortname = "{{ site.JB.comments.disqus.short_name }}";
+	var threadUrl = 'link:' + $('.comment .show-hidden').attr('data-disqus-url');
+
+	$.ajax({
+		type: 'GET',
+		url: 'https://disqus.com/api/3.0/threads/set.jsonp',
+		data: { api_key: disqusPublicKey, forum: disqusShortname, thread: threadUrl },
+		cache: false,
+		dataType: 'jsonp',
+		success: function(result) {
+			if (result.response.length === 1) {
+				btnText = '{{ site.translations.show_comments }} (' + result.response[0].posts + ')';
+				$('.comment .show-hidden').html(btnText);
 			}
+		}
+	});
 
-			var ToC = "<nav role='navigation' class='toc'><ol>";
-			$("article h2").each(function () {
-				var secondHeading, thirdHeadingInside;
+	$('.comment .show-hidden').on('click', function() {
+		$.ajaxSetup({cache:true});
+		$.getScript('http://' + disqusShortname + '.disqus.com/embed.js');
+		$.ajaxSetup({cache:false});
+		$(this).remove();
+	});
 
-				secondHeading = $(this);
-				ToC += createListItem(secondHeading);
-
-				thirdHeadingInside = secondHeading.nextUntil("article h2", "h3");
-				if (thirdHeadingInside.length !== 0) {
-					ToC += "<ul>";
-					thirdHeadingInside.each(function () {
-						ToC += createListItem($(this));
-					});
-					ToC += "</ul>";
-				}
-			});
-			ToC += "</ol>" + "</nav>";
-
-			$("#toc").prepend(ToC);
-		</script>
-	{% endif %}
-
-	{% if page.utilities contains "toc" or page.utilities contains "back-to-top" %}
-		<script>
-			$(document).ready(function () {
-				var offset = 220, duration = 500, width = 1280;
-				$(window).scroll(function () {
-					if ($(window).width() > width) {
-						if ($(this).scrollTop() > offset) {
-							$('footer .back-to-top').fadeIn(duration);
-						} else {
-							$('footer .back-to-top').fadeOut(duration);
-						}
-					}
-				});
-				$(window).resize(function () {
-					if ($(window).width() < width) {
-						$('footer .back-to-top').fadeOut(duration);
-					}
-					if ($(window).width() >= width && $(this).scrollTop() > offset) {
-						$('footer .back-to-top').fadeIn(duration);
-					}
-				});
-
-				$('footer .back-to-top').click(function (event) {
-					event.preventDefault();
-					$('html, body').animate({scrollTop: 0}, duration);
-					return false;
-				});
-			});
-		</script>
-	{% endif %}
+	if(/\#comment/.test(location.hash)){
+		$('.comment .show-hidden').trigger('click');
+	}
+});
+</script>
 {% endif %}

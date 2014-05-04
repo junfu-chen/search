@@ -7,12 +7,11 @@
 
 /* Continue button */
 @media only screen and (max-height: 320px) {
-	.continue {
-		font-size:.7em;
-		height: 8px;
-		width: 56px;
-		margin-left: -35px;
-		padding: 6px 6px 12px 6px;
+	.btn-continue {
+		background-image: url("/assets/images/btn-more-small.png");
+		margin-left: -25px;
+		height: 16px;
+		width: 16px;
 	}
 }
 

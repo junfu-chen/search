@@ -56,7 +56,10 @@
                 </div>
             </footer>
             <div class="misc-content">
-                <div class="comment">{% include JB/comments %}</div>
+                <div class="comment">
+                    <button class="center-block show-hidden" data-ga="Show Comments" data-disqus-url="{{ site.production_url }}{{ page.url }}/">{{ site.translations.show_comments }}</button>
+                    <div id="disqus_thread"></div>
+                </div>
             </div><!-- misc-content -->
         </div><!-- content -->
     </div><!-- unit-inner -->

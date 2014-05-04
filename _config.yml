@@ -1,20 +1,28 @@
 permalink: /:year/:month/:day/:title
 
-exclude: [".rvmrc", ".rbenv-version", "LICENSE", "README.md", "Rakefile", "changelog.md"]
-pygments: true
-markdown: rdiscount
+exclude: [".rvmrc", ".rbenv-version", "Rakefile", "changelog.md"]
+highlighter: pygements
+markdown: kramdown
+
+kramdown:
+  auto_ids: false
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 2..3
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: false
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : 曾屹
+title: 曾屹
 description: "曾屹的个人网站"
 # tagline: Site Tagline
-author :
-  name : 曾屹
+author:
+  name: 曾屹
   username: yizeng
-  # twitter : username
-  # feedburner : feedname
+  # twitter: username
+  # feedburner: feedname
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -24,12 +32,12 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://cn.yizeng.me
+production_url: http://cn.yizeng.me
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
-JB :
-  version : 0.3.0
+JB:
+  version: 0.3.0
 
   # All links will be namespaced by BASE_PATH if defined.
   # Links in your website should always be prefixed with {{BASE_PATH}}
@@ -53,7 +61,7 @@ JB :
   #   - Only the following values are falsy: ["", null, false]
   #   - When setting BASE_PATH it must be a valid url.
   #     This means always setting the protocol (http|https) or prefixing with "/"
-  BASE_PATH : false
+  BASE_PATH: false
 
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
@@ -63,31 +71,31 @@ JB :
   #   http://s3.amazonaws.com/yoursite/themes/watermelon
   #   /assets
   #
-  ASSET_PATH : false
+  ASSET_PATH: false
 
   # These paths are to the main pages Jekyll-Bootstrap ships with.
   # Some JB helpers refer to these paths; change them here if needed.
   #
-  archive_path: /archive.html
-  categories_path : /categories/
-  tags_path : /tags/
-  atom_path : /atom.xml
-  rss_path : /rss.xml
+  categories_path: /categories/
+  tags_path: /tags/
+  atom_path: /atom.xml
+  rss_path: /rss.xml
 
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.
   # Set 'provider' to false to turn commenting off globally.
   #
-  comments :
-    provider : disqus
-    disqus :
-      short_name : yizeng-cn
-    livefyre :
-      site_id : 123
-    intensedebate :
-      account : 123abc
-    facebook :
-      appid : 123
+  comments:
+    provider: disqus
+    disqus:
+      short_name: yizeng-cn
+      public_key: ULZ0b9TFdfCUJSKQd4WCKv2v3u25YoG7YG8zXPewkWrT35lZ0Se9YnxLzoV6VM8W
+    livefyre:
+      site_id: 123
+    intensedebate:
+      account: 123abc
+    facebook:
+      appid: 123
       num_posts: 5
       width: 580
       colorscheme: light
@@ -96,22 +104,22 @@ JB :
   # Set 'provider' to the analytics provider you want to use.
   # Set 'provider' to false to turn analytics off globally.
   #
-  analytics :
-    provider : google
-    google : 
-        tracking_id : 'UA-42466615-2'
-    getclicky :
-      site_id : 
-    mixpanel :
-        token : '_MIXPANEL_TOKEN_'
+  analytics:
+    provider: google
+    google:
+        tracking_id: 'UA-42466615-2'
+    getclicky:
+      site_id:
+    mixpanel:
+        token: '_MIXPANEL_TOKEN_'
 
-  # Settings for sharing helper.
+  # Settings for sharing helper. 
   # Sharing is for things like tweet, plusone, like, reddit buttons etc.
   # Set 'provider' to the sharing provider you want to use.
   # Set 'provider' to false to turn sharing off globally.
   #
-  sharing :
-    provider : false
+  sharing:
+    provider: false
 
   # Settings for all other include helpers can be defined by creating 
   # a hash with key named for the given helper. ex:
@@ -130,33 +138,34 @@ translations:
   last_updated: '最后更新于'
 
   # <head>
-  keywords: '曾屹,软件,工程师,测试,基督城,新西兰'
+  keywords: '软件,工程师,testing测试,基督城,新西兰'
 
   # site notices
-  old_ie_notice: '您正在使用过时的浏览器。请<a href="http://browsehappy.com/" target="_blank">升级</a>或<a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">开启 Google Chrome Frame</a> 来提升使用体验。'
-  js_notice: '本站某些功能需要 JavaScript 支持。请参阅此网站教程来<a href="http://www.enable-javascript.com/" target="_blank">开启浏览器的 JavaScript 功能</a>。'
+  old_ie_notice: '您正在使用一个过时的网页浏览器。请<a href="http://browsehappy.com/" target="_blank">升级您的浏览器</a>或<a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">开启 Google Chrome Frame</a> 来提高用户体验。'
+  js_notice: '本网站需要 JavaScript。请查阅指南来<a href="http://www.enable-javascript.com/" target="_blank">给您的浏览器开启 JavaScript 功能</a>。'
 
-  # search
+  # overlay
+  nav_placeholder: '菜单'
   search_placeholder: '搜索...'
   search_results: '搜索结果'
-  search_no_found: '什么也没找到 :('
+  search_not_found: '啊哈<br/><small>什么也没找到 :(</small>'
   close: '关闭'
 
   # navigation
   articles: '文章列表'
   notes: '笔记列表'
-  categories: '文章分类'
-  tags: '文章标签'
-  search: '文章搜索'
+  categories: '博文分类'
+  tags: '博文标签'
+  search: '博文搜索'
 
   # the-footer
   about: '关于'
-  license: '许可证'
-  license_link: 'https://github.com/yizeng/cn.yizeng.me#%E8%AE%B8%E5%8F%AF%E8%AF%81'
+  license: '协议'
+  license_link: 'https://github.com/yizeng/yizeng.me#license'
   acknowledgements: '鸣谢'
   acknowledgements_link: 'https://github.com/yizeng/yizeng.me/wiki/Acknowledgements'
   show_details: false
-  job_title: 'software developer and test automator'
+  job_title: 'a software developer and test automator'
   based_in: ' based in '
   city: 'Christchurch'
   country: 'New Zealand'
@@ -164,10 +173,12 @@ translations:
   back_to_top: '返回顶部'
 
   # post.html
-  published: '发表于'
-  cc_license: 'http://creativecommons.org/licenses/by-sa/3.0/deed.zh'
-  view: '阅读'
+  published: '发表信息'
+  cc_license: 'http://creativecommons.org/licenses/by-sa/4.0/'
+  view: 'View'
+  show: '显示'
+  show_comments: '显示评论'
 
   # 404.html
   404_heading: '对不起，无法找到该页。'
-  404_content: '页面将在数秒内自动跳转回 <a href="http://yizeng.me">cn.yizeng.me</a>'
+  404_content: '页面将在数秒内自动跳转回 <a href="http://cn.yizeng.me/blog">cn.yizeng.me/blog</a>'

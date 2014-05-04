@@ -10,6 +10,7 @@
 
 @import "./home/fullPage";
 
+$color-text-dark: #2D2D2D;
 $color-text-light: #fff;
 $color-link: rgba(255, 153, 0, 0.8);
 $color-link-hover: #FF9900;
@@ -18,22 +19,30 @@ $color-background-light: rgba(255, 255, 255, 0.1);
 $icon-size: 64px;
 
 body {
-	color: $color-text-light;
-	font-family: 'Ubuntu Titling', 'Ubuntu Regular', 'DejaVu Sans', Tahoma, sans-serif;
+	color: $color-text-dark;
+	font-family: "Junge Regular", "Times New Roman", Georgia, serif;
 	font-size: 1em;
 }
 
 h1 {
 	font-size: 5em;
+	margin: 0.45em 0;
 	text-transform: uppercase;
 }
 h2 {
 	font-size: 2.225em;
-	margin-bottom: 12px;
+	margin-bottom: 24px;
 }
 h3 {
-	font-size: 1.725em;
-	margin-top: 12px;
+	font-size: 1.725em
+}
+
+h1,
+h2,
+h3 {
+	span {
+		padding: 6px 2px
+	}
 }
 
 .site-notice {
@@ -60,21 +69,30 @@ h3 {
 }
 
 #section0 {
-	background: url('/assets/images/skin/background-section0.jpg') no-repeat center center;
-	@include background-size(cover);
+	background: url('/assets/images/skin/noisy_texture_section0-200x200.png') repeat 0 0 #F0F0F0
 }
 #section1 {
-	background: url('/assets/images/skin/background-section1.jpg') no-repeat center center;
-	@include background-size(cover);
+	background: url('/assets/images/skin/noisy_texture_section1-200x200.png') repeat 0 0 #150E1F
 }
 
-a[class^='btn'] {
+#fullPage-nav span {
+	border: 1px solid #8A8A8A
+}
+#fullPage-nav li .active span {
+	background: #707070
+}
+
+.btn-light,
+.btn-dark {
 	@include transition(all .3s ease-in-out);
 	color: $color-text-light;
-	border: 1px solid $color-text-light;
+	border: 1px solid #150E1F;
 	outline: none;
 	text-decoration: none;
-	text-transform: uppercase;
+
+	&:hover {
+		border: 1px solid $color-text-light;
+	}
 }
 
 .btn-dark {
@@ -91,21 +109,39 @@ a[class^='btn'] {
 	background-color: $color-background-dark !important
 }
 
-.continue {
+.btn-enter {
+	padding: 4px 6px 0px 4px
+}
+
+.btn-continue {
+	@include transition(all .3s ease-in-out);
+	background-image: url("/assets/images/btn-more.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: inline-block;
 	bottom: 0;
 	left: 50%;
-	height: 20px;
-	margin-left: -70px;
-	padding: 10px;
+	margin-left: -30px;
+	outline: none;
+	padding: 12px;
 	position: absolute;
-	width: 120px;
+	text-indent: -9999em;
+	height: 32px;
+	width: 32px;
 	z-index: 2;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
+
+	&:hover {
+		-webkit-animation-name: bounce;
+		animation-name: bounce;
+	}
 }
 
 .social-links {
 	a {
 		background-size: $icon-size $icon-size;
-		margin: 10px;
+		margin: 18px;
 		height: $icon-size;
 		width: $icon-size;
 	}
