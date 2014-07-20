@@ -8,7 +8,7 @@ alias: [/2013/05/10/]
 last_updated: April 20, 2014
 utilities: fancybox, unveil
 ---
-> 若想查看原文，请点击[本链接](http://yizeng.me/2013/05/17/quick-rubygems-command-references-for-jekyll/)。
+> 若想查看原文，请点击[本链接](http://yizeng.me/2013/05/10/setup-jekyll-on-windows/)。
 
 * Kramdown table of contents
 {:toc .toc}
