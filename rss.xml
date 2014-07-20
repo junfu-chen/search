@@ -5,8 +5,8 @@
         <description>曾屹</description>
         <atom:link href="http://cn.yizeng.me/rss.xml" rel="self" type="application/rss+xml" />
         <link>http://cn.yizeng.me</link>
-        <lastBuildDate>Sun, 04 May 2014 19:30:55 +1200</lastBuildDate>
-        <pubDate>Sun, 04 May 2014 19:30:55 +1200</pubDate>
+        <lastBuildDate>Sun, 20 Jul 2014 12:05:14 +1200</lastBuildDate>
+        <pubDate>Sun, 20 Jul 2014 12:05:14 +1200</pubDate>
         <ttl>1800</ttl>
 
         
@@ -35,27 +35,26 @@
 
 &lt;h2 id=&quot;app-config&quot;&gt;App.config 文件&lt;/h2&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot; ?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;configSections&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;sectionGroup&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;geoSettings&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;summary&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;System.Configuration.NameValueSectionHandler&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sectionGroup&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/configSections&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot; ?&amp;gt;
+&amp;lt;configuration&amp;gt;
+    &amp;lt;configSections&amp;gt;
+        &amp;lt;sectionGroup name=&amp;quot;geoSettings&amp;quot;&amp;gt;
+            &amp;lt;section name=&amp;quot;summary&amp;quot; type=&amp;quot;System.Configuration.NameValueSectionHandler&amp;quot; /&amp;gt;
+        &amp;lt;/sectionGroup&amp;gt;
+    &amp;lt;/configSections&amp;gt;
 
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;appSettings&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;add&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Language&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Ruby&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;add&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Version&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;1.9.3&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/appSettings&amp;gt;&lt;/span&gt;
+    &amp;lt;appSettings&amp;gt;
+        &amp;lt;add key=&amp;quot;Language&amp;quot; value=&amp;quot;Ruby&amp;quot; /&amp;gt;
+        &amp;lt;add key=&amp;quot;Version&amp;quot; value=&amp;quot;1.9.3&amp;quot; /&amp;gt;
+    &amp;lt;/appSettings&amp;gt;
 
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;geoSettings&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;summary&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;add&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Country&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;New Zealand&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;add&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;City&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Christchurch&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/summary&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/geoSettings&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &amp;lt;geoSettings&amp;gt;
+        &amp;lt;summary&amp;gt;
+            &amp;lt;add key=&amp;quot;Country&amp;quot; value=&amp;quot;New Zealand&amp;quot; /&amp;gt;
+            &amp;lt;add key=&amp;quot;City&amp;quot; value=&amp;quot;Christchurch&amp;quot; /&amp;gt;
+        &amp;lt;/summary&amp;gt;
+    &amp;lt;/geoSettings&amp;gt;
+&amp;lt;/configuration&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;update-appsettings&quot;&gt;更新 AppSettings&lt;/h2&gt;
 
@@ -186,11 +185,10 @@ IWebDriver driver = new ChromeDriver(options);&lt;/code&gt;&lt;/pre&gt;&lt;/div&
 
 &lt;h3 id=&quot;chrome-ruby&quot;&gt;Ruby&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;selenium-webdriver&amp;#39;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;require &amp;#39;selenium-webdriver&amp;#39;
 
-&lt;span class=&quot;no&quot;&gt;USER_AGENT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10;&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Selenium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;WebDriver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:chrome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:switches&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%W[--user-agent=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;USER_AGENT&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+USER_AGENT = &amp;#39;Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10;&amp;#39;
+driver = Selenium::WebDriver.for :chrome, :switches =&amp;gt; %W[--user-agent=#{USER_AGENT}]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;firefox&quot;&gt;Firefox&lt;/h2&gt;
 
@@ -203,13 +201,12 @@ IWebDriver driver = new FirefoxDriver(profile);&lt;/code&gt;&lt;/pre&gt;&lt;/div
 
 &lt;h3 id=&quot;firefox-ruby&quot;&gt;Ruby&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;selenium-webdriver&amp;#39;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;require &amp;#39;selenium-webdriver&amp;#39;
 
-&lt;span class=&quot;n&quot;&gt;profile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Selenium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;WebDriver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Firefox&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Profile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;profile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;general.useragent.override&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10&amp;#39;&lt;/span&gt;
+profile = Selenium::WebDriver::Firefox::Profile.new
+profile[&amp;#39;general.useragent.override&amp;#39;] = &amp;#39;Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10&amp;#39;
 
-&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Selenium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;WebDriver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:firefox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:profile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;profile&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+driver = Selenium::WebDriver.for :firefox, :profile =&amp;gt; profile&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;phantomjs&quot;&gt;PhantomJS&lt;/h2&gt;
 
@@ -222,12 +219,11 @@ IWebDriver driver = new PhantomJSDriver(options);&lt;/code&gt;&lt;/pre&gt;&lt;/d
 
 &lt;h3 id=&quot;phantomjs-ruby&quot;&gt;Ruby&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;selenium-webdriver&amp;#39;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;require &amp;#39;selenium-webdriver&amp;#39;
 
-&lt;span class=&quot;n&quot;&gt;capabilities&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Selenium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;WebDriver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Remote&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Capabilities&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phantomjs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;phantomjs.page.settings.userAgent&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+capabilities = Selenium::WebDriver::Remote::Capabilities.phantomjs(&amp;#39;phantomjs.page.settings.userAgent&amp;#39; =&amp;gt; &amp;#39;Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10&amp;#39;)
 
-&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Selenium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;WebDriver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:phantomjs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:desired_capabilities&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capabilities&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+driver = Selenium::WebDriver.for :phantomjs, :desired_capabilities =&amp;gt; capabilities&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;ie&quot;&gt;IE&lt;/h2&gt;
 
@@ -427,27 +423,26 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 &lt;p&gt;以下为一个示例测试文件叫做 &lt;code&gt;test_home_page.rb&lt;/code&gt;：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;selenium-webdriver&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;test/unit&amp;#39;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;require &amp;#39;selenium-webdriver&amp;#39;
+require &amp;#39;test/unit&amp;#39;
 
-&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Test&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestHomePage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TestCase&lt;/span&gt;
+module Test
+  class TestHomePage &amp;lt; Test::Unit::TestCase
 
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setup&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@driver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Selenium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;WebDriver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:phantomjs&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@driver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;navigate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;http://yizeng.me&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    def setup
+      @driver = Selenium::WebDriver.for :phantomjs
+      @driver.navigate.to(&amp;#39;http://yizeng.me&amp;#39;)
+    end
 
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;teardown&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@driver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quit&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    def teardown
+      @driver.quit
+    end
 
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_home_page_title&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;assert_equal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Yi Zeng&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@driver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    def test_home_page_title
+      assert_equal(&amp;#39;Yi Zeng&amp;#39;, @driver.title)
+    end
+  end
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;add-rakefile&quot;&gt;添加 Rakefile&lt;/h3&gt;
 
@@ -461,18 +456,17 @@ The command &quot;rake&quot; exited with 1.
 
 &lt;p&gt;以下为 Rakefile 示例：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;rake/testtask&amp;#39;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;require &amp;#39;rake/testtask&amp;#39;
 
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:default&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;Rake&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TestTask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;libs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;test&amp;#39;&lt;/span&gt;
+task :default =&amp;gt; [:test]
+Rake::TestTask.new(:test) do |test|
+  test.libs &amp;lt;&amp;lt; &amp;#39;test&amp;#39;
 
-  &lt;span class=&quot;c1&quot;&gt;# ensure the sample test file is included here&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;FileList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;test/test_*.rb&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  # ensure the sample test file is included here
+  test.test_files = FileList[&amp;#39;test/test_*.rb&amp;#39;]
 
-  &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  test.verbose = true
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;add-travis-yml&quot;&gt;添加 .travis.yml&lt;/h3&gt;
 
@@ -488,19 +482,18 @@ The command &quot;rake&quot; exited with 1.
 详细的官方文档可以&lt;a href=&quot;http://about.travis-ci.org/docs/user/languages/ruby/&quot;&gt;在这里&lt;/a&gt;被查阅。
 想要验证配置文件，&lt;a href=&quot;http://about.travis-ci.org/docs/user/travis-lint/&quot;&gt;Travis Lint&lt;/a&gt; 会是一个非常方便的工具，不过最简单的方法是前往 &lt;a href=&quot;http://lint.travis-ci.org/&quot;&gt;Travis WebLint&lt;/a&gt; 页面，直接粘贴进配置文件内容。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;yaml&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# 示例 .travis.yml 文件:&lt;/span&gt;
-&lt;span class=&quot;l-Scalar-Plain&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;ruby&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;# 示例 .travis.yml 文件:
+language: ruby
 
-&lt;span class=&quot;l-Scalar-Plain&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 将被使用的 Ruby 版本&lt;/span&gt;
-  &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;2.0.0&lt;/span&gt;
-  &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;1.9.3&lt;/span&gt;
-  &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;1.9.2&lt;/span&gt;
+rvm: # 将被使用的 Ruby 版本
+  - 2.0.0
+  - 1.9.3
+  - 1.9.2
 
-&lt;span class=&quot;l-Scalar-Plain&quot;&gt;before_install&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;gem update&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 可选，更新所有的 gems&lt;/span&gt;
-  &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;gem install selenium-webdriver&lt;/span&gt;
-  &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;phantomjs --version&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 输出 phantomjs 版本&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+before_install:
+  - gem update # 可选，更新所有的 gems
+  - gem install selenium-webdriver
+  - phantomjs --version # 输出 phantomjs 版本&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;push-to-github&quot;&gt;上传至 Github&lt;/h2&gt;
 
@@ -594,7 +587,7 @@ branches 可以通过如 &lt;code&gt;?branch=master,staging,production&lt;/code&
             <item>
                     <title>创建自定义的 Jekyll 404 页面</title>
                     <description>&lt;blockquote&gt;
-  &lt;p&gt;若想查看原文，请点击&lt;a href=&quot;http://yizeng.me/2013/05/17/quick-rubygems-command-references-for-jekyll/&quot;&gt;本链接&lt;/a&gt;。&lt;/p&gt;
+  &lt;p&gt;若想查看原文，请点击&lt;a href=&quot;http://yizeng.me/2013/05/26/create-a-custom-jekyll-404-page/&quot;&gt;本链接&lt;/a&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;本文示例了如何给储存在 &lt;a href=&quot;http://pages.github.com/&quot;&gt;GitHub Page&lt;/a&gt; 服务器上的 Jekyll 网站创建自定义的 Jekyll 404 页面，对于使用其他服务器的 Jekyll 网站情况可能有所不同。同时还需要注意的是，自定义的 404 页面仅对使用了自己域名的网站有效。查看更详细官方的文档，请点击 GitHub Pages 的官方文档 &lt;a href=&quot;https://help.github.com/articles/custom-404-pages&quot;&gt;Custom 404 Pages - GitHub Help&lt;/a&gt;。&lt;/p&gt;
@@ -771,7 +764,7 @@ gem uninstall jekyll --version &#39;&amp;lt;1.0.1&#39;
             <item>
                     <title>在 Windows 上安装 Jekyll</title>
                     <description>&lt;blockquote&gt;
-  &lt;p&gt;若想查看原文，请点击&lt;a href=&quot;http://yizeng.me/2013/05/17/quick-rubygems-command-references-for-jekyll/&quot;&gt;本链接&lt;/a&gt;。&lt;/p&gt;
+  &lt;p&gt;若想查看原文，请点击&lt;a href=&quot;http://yizeng.me/2013/05/10/setup-jekyll-on-windows/&quot;&gt;本链接&lt;/a&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul class=&quot;toc&quot; id=&quot;markdown-toc&quot;&gt;
